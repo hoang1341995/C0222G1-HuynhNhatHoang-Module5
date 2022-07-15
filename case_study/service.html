@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Dịch vụ</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="custom/css/style.css" />
+    <style>
+        .container-image {
+            position: relative;
+            width: 50%;
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container-image:hover .image {
+            opacity: 0.3;
+        }
+
+        .container-image:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: #04AA6D;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+    </style>
+</head>
+<body>
+<!-- nav-bar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FURAMA RESORT</a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/service.html">Dịch vụ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled"
+                    >Disabled</a
+                    >
+                </li>
+            </ul>
+            <form class="d-flex input-group w-auto">
+                <input type="search" class="form-control" placeholder="Nhập nội dung" aria-label="Search" />
+                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" >
+                    Tìm kiếm
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- nav-bar-->
+
+<!-- Carousel-->
+<div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark" data-mdb-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button
+                data-mdb-target="#carouselDarkVariant"
+                data-mdb-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+        ></button>
+        <button
+                data-mdb-target="#carouselDarkVariant"
+                data-mdb-slide-to="1"
+                aria-label="Slide 1"
+        ></button>
+        <button
+                data-mdb-target="#carouselDarkVariant"
+                data-mdb-slide-to="2"
+                aria-label="Slide 1"
+        ></button>
+    </div>
+
+    <!-- Inner -->
+    <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active">
+            <img src="img/carousel/img2.jpeg" class="d-block w-100" alt="Motorbike Smoke"/>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item active">
+            <img src="img/carousel/img1.jpeg" class="d-block w-100" alt="Mountaintop"/>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+        <!-- Single item -->
+        <div class="carousel-item">
+            <img src="img/carousel/img2.jpeg" class="d-block w-100" alt="Woman Reading a Book"/>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Inner -->
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- Carousel-->
+<div class="container">
+    <div class="col-12">
+        <div class="row">
+            <div class="card-group">
+                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light m-2">
+                    <div class="container-image">
+                        <img class="card-img-top" src="img/service/img1.jpg" alt="Card image cap">
+                        <div class="middle">
+                            <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-danger w-25 btn-del" data-toggle="modal" data-target="#modelId"><i class="fa fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title m-0">PHÒNG SUITE HƯỚNG BIỂN</h4>
+                        <p class="card-text">Diện tích phòng: 85.8m<sup>2</sup></p>
+                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                            <i class="fa fa-circle-info"></i> Xem thêm
+                        </button>
+                    </div>
+                </div>
+                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light m-2">
+                    <div class="container-image">
+                        <img class="card-img-top" src="img/service/img2.jpg"  alt="Card image cap">
+                        <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger w-25 btn-del" data-toggle="modal" data-target="#modelId"><i class="fa fa-trash-can"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                        <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                            <i class="fa fa-circle-info"></i> Xem thêm
+                        </button>
+                    </div>
+                </div>
+                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light m-2">
+                    <div class="container-image">
+                        <img class="card-img-top" src="img/service/img3.jpg" alt="Card image cap">
+                        <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger w-25 btn-del" data-toggle="modal" data-target="#modelId"><i class="fa fa-trash-can"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title m-0">PHÒNG DELUXE HƯỚNG VƯỜN</h4>
+                        <p class="card-text">Diện tích phòng: 43.7m<sup>2</sup></p>
+                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                            <i class="fa fa-circle-info"></i> Xem thêm
+                        </button>
+                    </div>
+                </div>
+                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light">
+                    <div class="container-image">
+                        <img class="card-img-top" src="img/service/img4.jpg" alt="Card image cap">
+                        <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger w-25 btn-del" data-toggle="modal" data-target="#modelId"><i class="fa fa-trash-can"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title m-0">PHÒNG SUITE HƯỚNG BIỂN</h4>
+                        <p class="card-text">Diện tích phòng: 85.8m<sup>2</sup></p>
+                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                            <i class="fa fa-circle-info"></i> Xem thêm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<button onclick="scrollTopAnimated()" id="back-top" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+
+<script type="text/javascript" src="custom/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="custom/js/custom-js.js"></script>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        <i class="fas fa-gem me-3"></i>How to Get to Us
+                    </h6>
+                    <p>
+                        Furama is a premier base for exploring one of Asia’s most exciting new destinations. Just a short drive from Danang lay four UNESCO-listed World Heritage Sites:
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Products
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Angular</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">React</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Vue</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Laravel</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Useful links
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Pricing</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Settings</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Orders</a>
+                    </p>
+                    <p>
+                        <a href="#!" class="text-reset">Help</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Contact
+                    </h6>
+                    <p><i class="fas fa-home me-3"></i> 103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        reservation@furamavietnam.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> : 84-236-3847 333/888</p>
+                    <p><i class="fas fa-print me-3"></i> : 84-236-3847 666</p>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2018
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Furama Resort Danang</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<!-- MDB -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Custom scripts -->
+<script type="text/javascript"></script>
+</body>
+</html>
