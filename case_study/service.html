@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>Dịch vụ</title>
-    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <link rel="stylesheet" href="custom/css/style.css" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
+    <link rel="stylesheet" href="css/mdb.min.css"/>
+    <link rel="stylesheet" href="custom/css/style.css"/>
     <style>
         .container-image {
             position: relative;
@@ -50,13 +51,32 @@
             font-size: 16px;
             padding: 16px 32px;
         }
+
+        /*phân trang*/
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {background-color: #ddd;}
     </style>
 </head>
 <body>
 <!-- nav-bar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">FURAMA RESORT</a>
+        <a class="navbar-brand" href="/">FURAMA RESORT</a>
         <button
                 class="navbar-toggler"
                 type="button"
@@ -71,10 +91,27 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                    <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/service.html">Dịch vụ</a>
+                <!-- Navbar dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-mdb-toggle="dropdown" aria-expanded="false">
+                        Dịch vụ
+                    </a>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#">Danh sách</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider"/>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" data-mdb-toggle="modal" data-mdb-target="#addNewService">Thêm mới
+                                dịch vụ</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled"
@@ -83,8 +120,8 @@
                 </li>
             </ul>
             <form class="d-flex input-group w-auto">
-                <input type="search" class="form-control" placeholder="Nhập nội dung" aria-label="Search" />
-                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark" >
+                <input type="search" class="form-control" placeholder="Nhập nội dung" aria-label="Search"/>
+                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
                     Tìm kiếm
                 </button>
             </form>
@@ -159,107 +196,527 @@
 </div>
 <!-- Carousel-->
 <div class="container">
-    <div class="col-12">
-        <div class="row">
-            <div class="card-group">
-                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light m-2">
-                    <div class="container-image">
-                        <img class="card-img-top" src="img/service/img1.jpg" alt="Card image cap">
-                        <div class="middle">
-                            <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
-                            <button class="btn btn-danger w-25 btn-del"  data-mdb-toggle="modal" data-mdb-target="#modalDelete"><i class="fa fa-trash-can"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title m-0">PHÒNG SUITE HƯỚNG BIỂN</h4>
-                        <p class="card-text">Diện tích phòng: 85.8m<sup>2</sup></p>
-                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                            <i class="fa fa-circle-info"></i> Xem thêm
-                        </button>
-                    </div>
-                </div>
-                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light m-2">
-                    <div class="container-image">
-                        <img class="card-img-top" src="img/service/img2.jpg"  alt="Card image cap">
-                        <div class="middle">
-                            <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
-                            <button class="btn btn-danger w-25 btn-del"  data-mdb-toggle="modal" data-mdb-target="#modalDelete"><i class="fa fa-trash-can"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                        <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                            <i class="fa fa-circle-info"></i> Xem thêm
-                        </button>
-                    </div>
-                </div>
-                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light m-2">
-                    <div class="container-image">
-                        <img class="card-img-top" src="img/service/img3.jpg" alt="Card image cap">
-                        <div class="middle">
-                            <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
-                            <button class="btn btn-danger w-25 btn-del"  data-mdb-toggle="modal" data-mdb-target="#modalDelete"><i class="fa fa-trash-can"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title m-0">PHÒNG DELUXE HƯỚNG VƯỜN</h4>
-                        <p class="card-text">Diện tích phòng: 43.7m<sup>2</sup></p>
-                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                            <i class="fa fa-circle-info"></i> Xem thêm
-                        </button>
-                    </div>
-                </div>
-                <div class="card ml-3 mr-3 mt-3 mb-3 bg-light">
-                    <div class="container-image">
-                        <img class="card-img-top" src="img/service/img4.jpg" alt="Card image cap">
-                        <div class="middle">
-                            <button class="btn btn-info w-25 btn-edit"><i class="fa fa-edit"></i></button>
-                            <button class="btn btn-danger w-25 btn-del"  data-mdb-toggle="modal" data-mdb-target="#modalDelete"><i class="fa fa-trash-can"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title m-0">PHÒNG SUITE HƯỚNG BIỂN</h4>
-                        <p class="card-text">Diện tích phòng: 85.8m<sup>2</sup></p>
-                        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                            <i class="fa fa-circle-info"></i> Xem thêm
-                        </button>
-                    </div>
-                </div>
+    <div class="d-flex">
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
             </div>
         </div>
     </div>
+    <div class="d-flex">
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+        <div class="card m-2 container-image " style="width: 33%">
+            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
+            <div class="middle">
+                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+                    Xóa
+                </button>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
+                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
+                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+                    <i class="fa fa-circle-info"></i> Xem thêm
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination" style="display: flex;justify-content: center;">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
     </div>
 </div>
 
-<!-- Modal -->
-<div
-        class="modal fade"
-        id="modalDelete"
-        data-mdb-backdrop="static"
-        data-mdb-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
->
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Xóa dịch vụ</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+
+<!-- Modal delete -->
+<div class="modal fade" id="modalDelete" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content text-center">
+            <div class="modal-header bg-danger text-white d-flex justify-content-center">
+                <h5 class="modal-title" id="exampleModalLabel">Xóa dịch vụ này chứ ?</h5>
             </div>
-            <div class="modal-body">Xóa dịch vụ này chứ</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-primary">Đồng ý</button>
+            <div class="modal-body">
+                <i class="fas fa-times fa-3x text-danger"></i>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-danger">
+                    Xóa
+                </button>
             </div>
         </div>
     </div>
 </div>
+<!-- Modal delete -->
+
+
+<!-- Modal add new Service -->
+<div class="modal fade" id="addNewService" tabindex="-1" aria-labelledby="exampleModalLabel"
+     data-gtm-vis-first-on-screen-2340190_1302="6774" data-gtm-vis-total-visible-time-2340190_1302="100"
+     data-gtm-vis-has-fired-2340190_1302="1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm mới dịch vụ</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form>
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="code" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Mã dịch vụ</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="name" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Tên dịch vụ</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="area" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Diện tích</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="maxPeople" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Số người tối đa</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="rentType" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Kiểu thuê</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="serviceType" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Loại dịch vụ</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="standardRoom" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Loại phòng</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="poolArea" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Diện tích hồ bơi</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="numberFloors" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Tâng</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="serviceCost" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Chi phí</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message input -->
+                    <div class="form-outline mb-4">
+                        <textarea class="form-control" id="description" rows="4"></textarea>
+                        <label class="form-label"  style="margin-left: 0px;">Mô tả</label>
+                        <div class="form-notch">
+                            <div class="form-notch-leading" style="width: 9px;"></div>
+                            <div class="form-notch-middle" style="width: 135.2px;"></div>
+                            <div class="form-notch-trailing"></div>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block">Xác nhận</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal add new Service -->
+
+<!-- Modal edit Service -->
+<div class="modal fade" id="editService" tabindex="-1" aria-labelledby="exampleModalLabel"
+     data-gtm-vis-first-on-screen-2340190_1302="6774" data-gtm-vis-total-visible-time-2340190_1302="100"
+     data-gtm-vis-has-fired-2340190_1302="1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sửa dịch vụ</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form>
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="codeEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Mã dịch vụ</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="nameEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Tên dịch vụ</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="areaEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Diện tích</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="maxPeopleEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Số người tối đa</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="rentTypeEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Kiểu thuê</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="serviceTypeEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Loại dịch vụ</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="standardRoomEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Loại phòng</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="poolAreaEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Diện tích hồ bơi</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="numberFloorsEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Tâng</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68.8px;">
+                                    </div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="serviceCostEdit" class="form-control">
+                                <label class="form-label" style="margin-left: 0px;">Chi phí</label>
+                                <div class="form-notch">
+                                    <div class="form-notch-leading" style="width: 9px;"></div>
+                                    <div class="form-notch-middle" style="width: 68px;"></div>
+                                    <div class="form-notch-trailing"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message input -->
+                    <div class="form-outline mb-4">
+                        <textarea class="form-control" id="descriptionEdit" rows="4"></textarea>
+                        <label class="form-label"  style="margin-left: 0px;">Mô tả</label>
+                        <div class="form-notch">
+                            <div class="form-notch-leading" style="width: 9px;"></div>
+                            <div class="form-notch-middle" style="width: 135.2px;"></div>
+                            <div class="form-notch-trailing"></div>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block">Xác nhận</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal edit Service -->
 
 
 <button onclick="scrollTopAnimated()" id="back-top" title="Go to top"><i class="fa fa-arrow-up"></i></button>
@@ -269,7 +726,7 @@
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" >
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <!-- Left -->
         <div class="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
@@ -313,7 +770,8 @@
                         <i class="fas fa-gem me-3"></i>How to Get to Us
                     </h6>
                     <p>
-                        Furama is a premier base for exploring one of Asia’s most exciting new destinations. Just a short drive from Danang lay four UNESCO-listed World Heritage Sites:
+                        Furama is a premier base for exploring one of Asia’s most exciting new destinations. Just a
+                        short drive from Danang lay four UNESCO-listed World Heritage Sites:
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -366,7 +824,8 @@
                     <h6 class="text-uppercase fw-bold mb-4">
                         Contact
                     </h6>
-                    <p><i class="fas fa-home me-3"></i> 103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</p>
+                    <p><i class="fas fa-home me-3"></i> 103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son
+                        District, Danang City, Vietnam</p>
                     <p>
                         <i class="fas fa-envelope me-3"></i>
                         reservation@furamavietnam.com
