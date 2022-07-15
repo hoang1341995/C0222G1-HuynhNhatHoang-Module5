@@ -4,8 +4,8 @@ function fibonacci(count) {
     var number2 = 1;
     var result = 0;
     for (var i = 1; i <= count; i++) {
-        total = number1 + number2;
-        number1 = number2;
+        total = number1;
+        number1 = total + number2;
         number2 = total;
         result += total;
     }

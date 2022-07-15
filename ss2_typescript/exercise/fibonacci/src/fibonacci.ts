@@ -5,8 +5,8 @@ function fibonacci(count : number) {
     let number2 : number = 1;
     let result : number = 0;
     for (let i = 1; i <= count; i++) {
-        total = number1 + number2;
-        number1 = number2;
+        total = number1;
+        number1 = total + number2;
         number2 = total;
         result += total;
     }
