@@ -1,855 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-    <title>Dịch vụ</title>
-    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
-    <link rel="stylesheet" href="css/mdb.min.css"/>
-    <link rel="stylesheet" href="custom/css/style.css"/>
-    <style>
-        .container-image {
-            position: relative;
-            width: 50%;
-        }
-
-        .image {
-            opacity: 1;
-            display: block;
-            width: 100%;
-            height: auto;
-            transition: .5s ease;
-            backface-visibility: hidden;
-        }
-
-        .middle {
-            transition: .5s ease;
-            opacity: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .container-image:hover .image {
-            opacity: 0.3;
-        }
-
-        .container-image:hover .middle {
-            opacity: 1;
-        }
-
-        .text {
-            background-color: #04AA6D;
-            color: white;
-            font-size: 16px;
-            padding: 16px 32px;
-        }
-
-        /*phân trang*/
-        .pagination {
-            display: inline-block;
-        }
-
-        .pagination a {
-            color: black;
-            float: left;
-            padding: 8px 16px;
-            text-decoration: none;
-        }
-
-        .pagination a.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .pagination a:hover:not(.active) {background-color: #ddd;}
-    </style>
+    <meta charset="UTF-8">
+    <title>DỊCH VỤ</title>
+    <script src="/bootstrap/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/font-awesome.min.css">
 </head>
-<body>
-<!-- nav-bar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<section class="ftco-section">
+    <div class="container-fluid d-flex m-2">
+        <div class="col-2">
+            <img src="/img/logo.png" height="100" width="80" alt="logo-furama">
+        </div>
+        <div class="col-8 justify-content-center">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="/img/img-furama/banner01.jpeg" height="150" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/img/img-furama/banner01.jpeg" height="150" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="/img/img-furama/banner01.jpeg" height="150" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-2 my-3">
+            <div class="form-group d-flex justify-content-center m-2">
+
+            </div>
+        </div>
+    </div>
+</section>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">FURAMA RESORT</a>
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars"></i>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span> Menu
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
-                </li>
-                <!-- Navbar dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-mdb-toggle="dropdown" aria-expanded="false">
-                        Dịch vụ
-                    </a>
-                    <!-- Dropdown menu -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="#">Danh sách</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider"/>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" data-mdb-toggle="modal" data-mdb-target="#addNewService">Thêm mới
-                                dịch vụ</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled"
-                    >Disabled</a
-                    >
-                </li>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item active"><a href="/" class="nav-link">Trang chủ</a></li>
+                <li class="nav-item"><a href="/customer" class="nav-link">Khánh hàng</a></li>
+                <li class="nav-item"><a href="/employee" class="nav-link">Nhân viên</a></li>
+                <li class="nav-item"><a href="/#" class="nav-link">Dịch vụ khác</a></li>
+                <!--                <%&#45;&#45;                <li class="nav-item"><a href="#" class="nav-link"></a></li>&#45;&#45;%>-->
+                <li class="nav-item"><a data-toggle="modal" data-target="#login" class="nav-link">Đăng nhập</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Đăng ký</a></li>
             </ul>
-            <form class="d-flex input-group w-auto">
-                <input type="search" class="form-control" placeholder="Nhập nội dung" aria-label="Search"/>
-                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                    Tìm kiếm
-                </button>
-            </form>
         </div>
     </div>
 </nav>
-<!-- nav-bar-->
 
-<!-- Carousel-->
-<div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark" data-mdb-ride="carousel">
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-        <button
-                data-mdb-target="#carouselDarkVariant"
-                data-mdb-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-        ></button>
-        <button
-                data-mdb-target="#carouselDarkVariant"
-                data-mdb-slide-to="1"
-                aria-label="Slide 1"
-        ></button>
-        <button
-                data-mdb-target="#carouselDarkVariant"
-                data-mdb-slide-to="2"
-                aria-label="Slide 1"
-        ></button>
-    </div>
+<body id="body">
+<div class="container-fluid d-flex">
+    <div class="left col-12">
+        <div class="d-flex m-2">
+            <div class="col-8">
+                <h1>Danh sách dịch vụ</h1>
+            </div>
+            <div class="col-4 m-2">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm" id="key" name="key"
+                           aria-label="Tìm kiếm" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="buttonSearchService">Tìm kiếm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="message"></div>
+        <div class="d-flex">
+            <div class="col-10">
+            </div>
+            <div class="col-2 text-right">
+                <button type="button" class="btn btn-outline-info m-1" style="margin-right: 2px"  data-toggle="modal" data-target="#addNew">Thêm mới dịch vụ
+                </button>
+            </div>
+        </div>
+        <table id="tables" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+            <tr>
+                <th>Mã dịch vụ</th>
+                <th>Tên dịch vụ</th>
+                <th>Diện tích</th>
+                <th>Tối đa</th>
+                <th>Kiểu thuê</th>
+                <th>Loại dịch vụ</th>
+                <th>Loại phòng</th>
+                <th>Hồ bơi</th>
+                <th>Tầng</th>
+                <th>Chi phí</th>
+                <th>Mô tả</th>
+                <th>Tuỳ chọn</th>
+            </tr>
+            </thead>
+            <tbody id="bodyTable">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-outline-primary m-1" data-toggle="modal" data-target="#edit"
+                                onclick="editModalService('${row.getId}','${row.getCode}', '${row.getName}', '${row.getArea}'
+                                                        , '${row.getMaxPeople}', '${row.getRentType.getId}', '${row.getServiceType.getId}'
+                                                        , '${row.getStandardRoom}', '${row.getPoolArea}', '${row.getFloor}'
+                                                        , '${row.getServiceCost}', '${row.getDescription}')">Sửa</button>
+                        <button type="button" class="btn btn-outline-danger m-1" data-toggle="modal" data-target="#delete"
+                                onclick="deleteModalService('${row.getId}','${row.getCode}', '${row.getName}')" >Xóa
+                        </button>
+                    </div>
+                </td>
 
-    <!-- Inner -->
-    <div class="carousel-inner">
-        <!-- Single item -->
-        <div class="carousel-item active">
-            <img src="img/carousel/img2.jpeg" class="d-block w-100" alt="Motorbike Smoke"/>
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-        </div>
+            </tr>
+            </tbody>
+        </table>
 
-        <!-- Single item -->
-        <div class="carousel-item active">
-            <img src="img/carousel/img1.jpeg" class="d-block w-100" alt="Mountaintop"/>
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
 
-        <!-- Single item -->
-        <div class="carousel-item">
-            <img src="img/carousel/img2.jpeg" class="d-block w-100" alt="Woman Reading a Book"/>
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-        </div>
-    </div>
-    <!-- Inner -->
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-<!-- Carousel-->
-<div class="container">
-    <div class="d-flex">
-            <img  class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex">
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex">
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-        <div class="card m-2 container-image " style="width: 33%">
-            <img class="card-img-top " src="img/service/img1.jpg" alt="Card image cap">
-            <div class="middle">
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
-                <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
-                    Xóa
-                </button>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>
-                <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>
-                <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
-                        data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-                    <i class="fa fa-circle-info"></i> Xem thêm
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="pagination" style="display: flex;justify-content: center;">
-        <a href="#">&laquo;</a>
-        <a href="#">1</a>
-        <a class="active" href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">&raquo;</a>
     </div>
 </div>
 
-
-<!-- Modal delete -->
-<div class="modal fade" id="modalDelete" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content text-center">
-            <div class="modal-header bg-danger text-white d-flex justify-content-center">
-                <h5 class="modal-title" id="exampleModalLabel">Xóa dịch vụ này chứ ?</h5>
+<!-- Modal edit -->
+<div class="modal fade bd-example-modal-lg" id="edit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelEdit">Sửa dịch vụ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-                <i class="fas fa-times fa-3x text-danger"></i>
+                <div class="d-flex">
+                    <input type="text" hidden name="idEdit" id="idEdit" >
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Mã dịch vụ</label>
+                            <input type="text" class="form-control" name="codeEdit" id="codeEdit"
+                                   placeholder="Nhập mã dịch vụ" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên dịch vụ</label>
+                            <input type="text" class="form-control" name="nameEdit" id="nameEdit"
+                                   placeholder="Nhập tên dịch vụ" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Diện tích</label>
+                            <input type="number" name="areaEdit" id="areaEdit"  class="form-control datepicker" placeholder="Nhập diện tích" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số người tối đa</label>
+                            <input type="number" class="form-control" name="maxPeopleEdit" id="maxPeopleEdit"
+                                   placeholder="Nhập số người tối đa" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Kiểu thuê</label>
+                            <select class="custom-select" name="rentTypeEdit" id="rentTypeEdit">
+                                <option th:each="rentTypes : ${rentTypeList}" th:value="${rentTypes.id}" th:text="${rentTypes.name}">
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Loại dịch vụ</label>
+                            <select class="custom-select" name="serviceTypeEdit" id="serviceTypeEdit" onchange="changeServiceTypeEdit()">
+                                <option th:each="serviceTypes : ${serviceTypeList}" th:value="${serviceTypes.id}" th:text="${serviceTypes.name}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại phòng</label>
+                            <select class="custom-select" name="standardRoomEdit" id="standardRoomEdit" >
+                                <option value="Thường">Thường</option>
+                                <option value="VIP">VIP</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Diện tích hồ bơi</label>
+                            <input type="number" class="form-control" name="poolAreaEdit" id="poolAreaEdit"
+                                   placeholder="Nhập diện tích hồ bơi" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tầng</label>
+                            <input type="number" class="form-control" name="floorEdit" id="floorEdit"
+                                   placeholder="Nhập tầng" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Chi phí</label>
+                            <input type="number" class="form-control" name="serviceCostEdit" id="serviceCostEdit"
+                                   placeholder="Nhập chi phí" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control" name="descriptionEdit" id="descriptionEdit" rows="3" placeholder="Nhập mô tả" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-dark btn-block mb-4" id="buttonEditService">Xác nhận</button>
+                </div>
             </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-danger" data-mdb-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-danger">
-                    Xóa
+        </div>
+    </div>
+</div>
+<!-- Modal edit -->
+<!-- Modal addNew -->
+<div class="modal fade bd-example-modal-lg" id="addNew" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabeladdNew">Thêm dịch vụ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Mã dịch vụ</label>
+                            <input type="text" class="form-control" name="code" id="code"
+                                   placeholder="Nhập mã dịch vụ" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên dịch vụ</label>
+                            <input type="text" class="form-control" name="name" id="name"
+                                   placeholder="Nhập tên dịch vụ" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Diện tích</label>
+                            <input type="number" name="area" id="area"  class="form-control datepicker" placeholder="Nhập diện tích" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số người tối đa</label>
+                            <input type="number" class="form-control" name="maxPeople" id="maxPeople"
+                                   placeholder="Nhập số người tối đa" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Kiểu thuê</label>
+                            <select class="custom-select" name="rentType" id="rentType">
+                                <option th:each="rentTypes : ${rentTypeList}" th:value="${rentTypes.id}" th:text="${rentTypes.name}">
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Loại dịch vụ</label>
+                            <select class="custom-select" name="serviceType" id="serviceType" onchange="changeServiceType()">
+                                <option th:each="serviceTypes : ${serviceTypeList}" th:value="${serviceTypes.id}" th:text="${serviceTypes.name}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại phòng</label>
+                            <select class="custom-select" name="standardRoom" id="standardRoom" >
+                                <option value="Thường">Thường</option>
+                                <option value="VIP">VIP</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Diện tích hồ bơi</label>
+                            <input type="number" class="form-control" name="poolArea" id="poolArea"
+                                   placeholder="Nhập diện tích hồ bơi" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tầng</label>
+                            <input type="number" class="form-control" name="numberFloors" id="numberFloors"
+                                   placeholder="Nhập tầng" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Chi phí</label>
+                            <input type="number" class="form-control" name="serviceCost" id="serviceCost"
+                                   placeholder="Nhập chi phí" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control" name="description" id="description" rows="3" placeholder="Nhập mô tả" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-dark btn-block mb-4" id="buttonAddNewService">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal addNew -->
+<!-- Modal delete -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabeldelete" aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabeldelete">Xoá Dịch vụ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center" id="bodyDeleteService">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <input hidden type="text" name="idDelete" id="idDelete">
+                <button type="button" class="btn btn-danger" id="buttonDeleteService">Đồng ý</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
 <!-- Modal delete -->
+<script>
+    function deleteModalService(id, code, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("bodyDeleteService").innerHTML = `Mã dịch vụ: <b style='color: #005cbf'>${code}</b><br>
+        Tên dịch vụ <b style='color: #005cbf'>${name}</b><br>
+        Xóa dịch vụ này chứ ?`;
+    }
 
+    function editModalService(id, code, name, area, maxPeople, rentType, serviceType, standardRoom, poolArea, floor, serviceCost, description) {
+        document.getElementById("idEdit").value = id;
+        document.getElementById("codeEdit").value = code;
+        document.getElementById("nameEdit").value = name;
+        document.getElementById("areaEdit").value = area;
+        document.getElementById("maxPeopleEdit").value = maxPeople;
+        document.getElementById("rentTypeEdit").value = rentType;
+        document.getElementById("serviceTypeEdit").value = serviceType;
+        document.getElementById("standardRoomEdit").value = standardRoom;
+        document.getElementById("poolAreaEdit").value = poolArea;
+        document.getElementById("floorEdit").value = floor;
+        document.getElementById("serviceCostEdit").value = serviceCost;
+        document.getElementById("descriptionEdit").value = description;
+    }
 
-<!-- Modal add new Service -->
-<div class="modal fade" id="addNewService" tabindex="-1" aria-labelledby="exampleModalLabel"
-     data-gtm-vis-first-on-screen-2340190_1302="6774" data-gtm-vis-total-visible-time-2340190_1302="100"
-     data-gtm-vis-has-fired-2340190_1302="1" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Thêm mới dịch vụ</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4">
-                <form>
-                    <!-- 2 column grid layout with text inputs for the first and last names -->
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="code" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Mã dịch vụ</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="name" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Tên dịch vụ</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    //addnew
+    $(document).ready(function () {
+        $('#buttonAddNewService').click(function (event) {
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="area" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Diện tích</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="maxPeople" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Số người tối đa</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            var code = document.getElementById("code").value;
+            var name = document.getElementById("name").value;
+            var area = document.getElementById("area").value;
+            var maxPeople = document.getElementById("maxPeople").value;
+            var rentType = document.getElementById("rentType").value; //model
+            var serviceType = document.getElementById("serviceType").value; //model
+            var standardRoom = document.getElementById("standardRoom").value;
+            var poolArea = document.getElementById("poolArea").value;
+            var numberFloors = document.getElementById("numberFloors").value;
+            var serviceCost = document.getElementById("serviceCost").value;
+            var description = document.getElementById("description").value;
+            var jsonModel = {
+                code: code,
+                name: name,
+                area: area,
+                maxPeople: maxPeople,
+                standardRoom: standardRoom,
+                poolArea: poolArea,
+                floor: numberFloors,
+                serviceCost: serviceCost,
+                description: description,
+                rentType: {
+                    id: rentType
+                },
+                serviceType: {
+                    id: serviceType
+                },
+            }
+            $.ajax({
+                type: 'post',
+                url: '/service/create',
+                data: JSON.stringify(jsonModel),
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    menu('service')
+                    document.getElementById("message").innerHTML = "<h4 style='font-weight: bold;color: dodgerblue'>Thêm thành công</h4>";
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="rentType" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Kiểu thuê</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="serviceType" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Loại dịch vụ</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                },
+                error : function() {
+                    document.getElementById("messageCreateEmployee").innerHTML = "<p style='font-weight: bold;color: red'>tạo tài khoản không thành công</p>";
+                }
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="standardRoom" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Loại phòng</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="poolArea" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Diện tích hồ bơi</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            });
+            event.preventDefault();
+        });
+    })
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="numberFloors" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Tâng</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="serviceCost" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Chi phí</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    //edit
+    $(document).ready(function () {
+        $('#buttonEditService').click(function (event) {
 
-                    <!-- Message input -->
-                    <div class="form-outline mb-4">
-                        <textarea class="form-control" id="description" rows="4"></textarea>
-                        <label class="form-label"  style="margin-left: 0px;">Mô tả</label>
-                        <div class="form-notch">
-                            <div class="form-notch-leading" style="width: 9px;"></div>
-                            <div class="form-notch-middle" style="width: 135.2px;"></div>
-                            <div class="form-notch-trailing"></div>
-                        </div>
-                    </div>
+            var id = document.getElementById("idEdit").value;
+            var code = document.getElementById("codeEdit").value;
+            var name = document.getElementById("nameEdit").value;
+            var area = document.getElementById("areaEdit").value
+            var maxPeople = document.getElementById("maxPeopleEdit").value
+            var rentType = document.getElementById("rentTypeEdit").value
+            var serviceType = document.getElementById("serviceTypeEdit").value
+            var standardRoom = document.getElementById("standardRoomEdit").value
+            var poolArea = document.getElementById("poolAreaEdit").value
+            var floor = document.getElementById("floorEdit").value
+            var serviceCost = document.getElementById("serviceCostEdit").value
+            var description = document.getElementById("descriptionEdit").value
+            var jsonModel = {
+                "id": id,
+                "code": code,
+                "name": name,
+                "area": area,
+                "maxPeople": maxPeople,
+                "serviceCost": serviceCost,
+                "description": description,
+                "standardRoom": standardRoom,
+                "poolArea": poolArea,
+                "floor": floor,
+                "rentType": {
+                    "id": rentType
+                },
+                "serviceType": {
+                    "id": serviceType
+                }
+            }
+            $.ajax({
+                type: 'post',
+                url: '/service/edit',
+                data: JSON.stringify(jsonModel),
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    menu('service')
+                    document.getElementById("message").innerHTML = "<h4 style='font-weight: bold;color: dodgerblue'>Sửa thành công</h4>";
+                },
+                error : function() {
 
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block">Xác nhận</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal add new Service -->
+                    document.getElementById("message").innerHTML = "<p style='font-weight: bold;color: red'>không thành công</p>";
+                }
 
-<!-- Modal edit Service -->
-<div class="modal fade" id="editService" tabindex="-1" aria-labelledby="exampleModalLabel"
-     data-gtm-vis-first-on-screen-2340190_1302="6774" data-gtm-vis-total-visible-time-2340190_1302="100"
-     data-gtm-vis-has-fired-2340190_1302="1" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Sửa dịch vụ</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4">
-                <form>
-                    <!-- 2 column grid layout with text inputs for the first and last names -->
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="codeEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Mã dịch vụ</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="nameEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Tên dịch vụ</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            });
+            event.preventDefault();
+        });
+    })
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="areaEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Diện tích</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="maxPeopleEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Số người tối đa</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    // loop
+    function getelementService(elements) {
+        console.log(elements)
+        let poolArea;
+        let floor;
+        elements.poolArea == null ? poolArea = "không": poolArea = elements.poolArea;
+        elements.floor == null ? floor = "không": floor = elements.floor;
+        return `<tr>
+               <td >${elements.code}</td>
+               <td >${elements.name}</td>
+               <td >${elements.area}</td>
+               <td >${elements.maxPeople}</td>
+               <td >${elements.rentType.name}</td>
+               <td >${elements.serviceType.name}</td>
+               <td >${elements.standardRoom}</td>
+               <td >${poolArea}</td>
+               <td >${floor}</td>
+               <td >${elements.serviceCost}</td>
+               <td >${elements.description}</td>
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="rentTypeEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Kiểu thuê</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="serviceTypeEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Loại dịch vụ</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+               <td>
+        <button type="button" class="btn btn-outline-primary m-1" data-toggle="modal" data-target="#edit"
+        onclick= "editModalService('${elements.id}','${elements.code}','${elements.name}'
+                                                        , '${elements.area}', '${elements.maxPeople}', '${elements.rentType.id}'
+                                                        , '${elements.serviceType.id}', '${elements.standardRoom}', '${elements.poolArea}'
+                                                        , '${elements.poolArea}', '${elements.serviceCost}', '${elements.description}')">Sửa</button>
+        <button type="button" class="btn btn-outline-danger m-1" data-toggle="modal" data-target="#delete"
+         onclick="deleteModalService('${elements.id}', '${elements.code}', '${elements.name}')">Xóa</button></td></tr>`;
+    }
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="standardRoomEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Loại phòng</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="poolAreaEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Diện tích hồ bơi</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    // delete
+    $(document).ready(function () {
+        $('#buttonDeleteService').click(function (event) {
 
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="numberFloorsEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Tâng</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68.8px;">
-                                    </div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-outline">
-                                <input type="text" id="serviceCostEdit" class="form-control">
-                                <label class="form-label" style="margin-left: 0px;">Chi phí</label>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 68px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            var idDelete = document.getElementById("idDelete").value;
+            $.ajax({
+                type: "GET",
+                //tên API
+                url: `/service/delete/${idDelete}`,
+                success: function (data) {
+                    menu('service')
+                    document.getElementById("message").innerHTML = "<h4 style='font-weight: bold;color: dodgerblue'>xóa thành công</h4>";
 
-                    <!-- Message input -->
-                    <div class="form-outline mb-4">
-                        <textarea class="form-control" id="descriptionEdit" rows="4"></textarea>
-                        <label class="form-label"  style="margin-left: 0px;">Mô tả</label>
-                        <div class="form-notch">
-                            <div class="form-notch-leading" style="width: 9px;"></div>
-                            <div class="form-notch-middle" style="width: 135.2px;"></div>
-                            <div class="form-notch-trailing"></div>
-                        </div>
-                    </div>
+                }
+            });
+            event.preventDefault();
+        });
+    })
 
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block">Xác nhận</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal edit Service -->
+    // search
+    $(document).ready(function () {
+        $('#buttonSearchService').click(function (event) {
+            callLoading()
+            var key = document.getElementById("key").value;
+            $.ajax({
+                type: "GET",
+                //tên API
+                url: `/service/search/${key}`,
+                success: function (data) {
+                    let content = '';
+                    for (let i = 0; i < data.content.length; i++) {
+                        content += getelementService(data.content[i]);
+                    }
+                    document.getElementById("message").innerHTML = "";
 
+                    document.getElementById('bodyTable').innerHTML = content;
+                    callLoading()
+                },
+                error : function() {
+                    callLoading()
+                    document.getElementById("message").innerHTML = "<h4 style='font-weight: bold;color: red'>Không tìm thấy</h4>";
+                }
+            });
+            event.preventDefault();
+        });
+    })
 
-<button onclick="scrollTopAnimated()" id="back-top" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+    function changeServiceTypeEdit(){
+        if (document.getElementById("serviceTypeEdit").value == "1"){
+            document.getElementById("poolAreaEdit").placeholder = "Nhập diện tích hồ bơi"
+            document.getElementById("floorEdit").placeholder = "Nhập số tầng"
+            document.getElementById("poolAreaEdit").disabled = false;
+            document.getElementById("floorEdit").disabled = false;
+        }else if (document.getElementById("serviceTypeEdit").value == "2"){
+            document.getElementById("poolAreaEdit").value = "";
+            document.getElementById("poolAreaEdit").placeholder = "House không có hồ bơi"
+            document.getElementById("floorEdit").placeholder = "Nhập số tầng"
+            document.getElementById("poolAreaEdit").disabled = true;
+            document.getElementById("floorEdit").disabled = false;
+        }else {
+            document.getElementById("poolAreaEdit").value = "";
+            document.getElementById("poolAreaEdit").placeholder = "Room không có hồ bơi"
+            document.getElementById("floorEdit").value = "";
+            document.getElementById("floorEdit").placeholder = "Room không có tầng"
+            document.getElementById("poolAreaEdit").disabled = true;
+            document.getElementById("floorEdit").disabled = true;
+        }
+    }
+    function changeServiceType(){
+        if (document.getElementById("serviceType").value == "1"){ //villa
+            document.getElementById("poolArea").placeholder = "Nhập diện tích hồ bơi"
+            document.getElementById("numberFloors").placeholder = "Nhập số tầng"
+            document.getElementById("poolArea").disabled = false;
+            document.getElementById("numberFloors").disabled = false;
+        }else if (document.getElementById("serviceType").value == "2"){ //house
+            document.getElementById("poolArea").value = "";
+            document.getElementById("poolArea").placeholder = "House không có hồ bơi"
+            document.getElementById("numberFloors").placeholder = "Nhập số tầng"
+            document.getElementById("poolArea").disabled = true;
+            document.getElementById("numberFloors").disabled = false;
+        }else {  //room
+            document.getElementById("poolArea").value = "";
+            document.getElementById("poolArea").placeholder = "Room không có hồ bơi"
+            document.getElementById("numberFloors").value = "";
+            document.getElementById("numberFloors").placeholder = "Room không có tầng"
+            document.getElementById("poolArea").disabled = true;
+            document.getElementById("numberFloors").disabled = true;
+        }
+    }
+</script>
 
-<script type="text/javascript" src="custom/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="custom/js/custom-js.js"></script>
-<!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <!-- Left -->
-        <div class="me-5 d-none d-lg-block">
-            <span>Get connected with us on social networks:</span>
-        </div>
-        <!-- Left -->
-
-        <!-- Right -->
-        <div>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-        <div class="container text-center text-md-start mt-5">
-            <!-- Grid row -->
-            <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <!-- Content -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3"></i>How to Get to Us
-                    </h6>
-                    <p>
-                        Furama is a premier base for exploring one of Asia’s most exciting new destinations. Just a
-                        short drive from Danang lay four UNESCO-listed World Heritage Sites:
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Products
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Angular</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">React</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Vue</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Laravel</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Useful links
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Settings</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Orders</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Help</a>
-                    </p>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Contact
-                    </h6>
-                    <p><i class="fas fa-home me-3"></i> 103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son
-                        District, Danang City, Vietnam</p>
-                    <p>
-                        <i class="fas fa-envelope me-3"></i>
-                        reservation@furamavietnam.com
-                    </p>
-                    <p><i class="fas fa-phone me-3"></i> : 84-236-3847 333/888</p>
-                    <p><i class="fas fa-print me-3"></i> : 84-236-3847 666</p>
-                </div>
-                <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-        </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2018
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Furama Resort Danang</a>
-    </div>
-    <!-- Copyright -->
-</footer>
-<!-- Footer -->
-<!-- MDB -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
-<!-- Custom scripts -->
-<script type="text/javascript"></script>
 </body>
+
+<div class="container">
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Trang chủ</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Nhân viên</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Khách hàng</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Dịch vụ</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Hợp đồng</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2022 Exam module3</p>
+    </footer>
+</div>
+<script src="/bootstrap/js/jquery.dataTables.min.js"></script>
+<script src="/bootstrap/js/dataTables.bootstrap4.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tables').dataTable({
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 10
+        });
+    });
+</script>
 </html>
