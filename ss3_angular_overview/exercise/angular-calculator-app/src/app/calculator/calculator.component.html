@@ -1,0 +1,12 @@
+<p>calculator works!</p>
+<input type="number" [(ngModel)]="number1" class="form-control" >
+<select [(ngModel)]="operator" class="custom-select" >
+  <option>+</option>
+  <option>-</option>
+  <option>*</option>
+  <option>/</option>
+</select>
+<input type="number" [(ngModel)]="number2" class="form-control">
+<button (click)="calculator()">submit</button>
+
+<p>result {{result}}</p>

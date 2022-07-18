@@ -1,0 +1,7 @@
+<p>color works!</p>
+<select [(ngModel)]="color">
+  <option id="#f00">red</option>
+  <option id="#000fff">blue</option>
+  <option id="#fcff00">yellow</option>
+</select>
+<div class="square" [style.background-color]="color"></div>
