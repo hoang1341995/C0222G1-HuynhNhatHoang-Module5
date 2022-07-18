@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-using-bootstrap": {
+    "case_study_angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-using-bootstrap",
+            "outputPath": "dist/case_study_angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,9 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -66,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-using-bootstrap:build:production"
+              "browserTarget": "case_study_angular:build:production"
             },
             "development": {
-              "browserTarget": "angular-using-bootstrap:build:development"
+              "browserTarget": "case_study_angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-using-bootstrap:build"
+            "browserTarget": "case_study_angular:build"
           }
         },
         "test": {
@@ -94,15 +92,13 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js"
-            ]
+            "scripts": []
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "c8f664de-acc2-47c7-82a5-8348289a2c2b"
   }
 }
