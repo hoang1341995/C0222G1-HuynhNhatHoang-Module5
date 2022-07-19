@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d6e4a12b-791e-4336-b2cc-d40ace82918e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/dataTables.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/loading.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/form/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/form/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/form/nav-bar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-contract.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-customer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-employee.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/menu-nav-bar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/dataTables.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/jquery-3.6.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/img/img-furama/banner01.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case_study_angular/tsconfig.spec.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2C9SV8lFKplhOuUPkZ2ukBCIhHX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hoanghuynh/Desktop/module5/C0222G1-HuynhNhatHoang-Module5/case-study-angular9/src/assets",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/hoanghuynh/Desktop/module5/C0222G1-HuynhNhatHoang-Module5/case-study-angular9/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (case-study-angular9)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6e4a12b-791e-4336-b2cc-d40ace82918e" name="Changes" comment="" />
+      <created>1658213331651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658213331651</updated>
+      <workItem from="1658213334264" duration="596000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
