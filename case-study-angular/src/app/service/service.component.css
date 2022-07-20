@@ -56,3 +56,14 @@
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+
+.div-group-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-flex {
+  flex: 1 0 21%; /* explanation below */
+}

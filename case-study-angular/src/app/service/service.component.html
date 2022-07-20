@@ -1,39 +1,28 @@
 <div class="container-fluid">
-  <div class="d-flex">
-<!--    <div class="card m-2 container-image " style="width: 33%">-->
-<!--      <img class="card-img-top " src="assets/img/service/img1.jpg" alt="Card image cap">-->
-<!--      <div class="middle">-->
-<!--        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>-->
-<!--        <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">-->
-<!--          Xóa-->
-<!--        </button>-->
-<!--      </div>-->
-<!--      <div class="card-body">-->
-<!--        <h4 class="card-title m-0">PHÒNG SUPERIOR HƯỚNG VƯỜN</h4>-->
-<!--        <p class="card-text">Diện tích phòng: 40.1m<sup>2</sup></p>-->
-<!--        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"-->
-<!--                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">-->
-<!--          <i class="fa fa-circle-info"></i> Xem thêm-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-    <div class="card m-2 container-image " style="width: 33%" *ngFor="let serviceElements of services">
-      <img class="card-img-top " src="{{serviceElements.url}}" alt="Card image cap">
+  <div class="div-group-flex">
+
+    <div class="card m-2 container-image card-flex" *ngFor="let serviceElement of services" >
+      <img class="card-img-top " src="assets/img/service/img{{serviceElement.id}}.jpg" alt="Card image cap">
       <div class="middle">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Chỉnh sửa</button>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+        <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
           Xóa
         </button>
       </div>
       <div class="card-body">
-        <h4 class="card-title m-0">{{serviceElements.name}}</h4>
-        <p class="card-text">Diện tích phòng: {{serviceElements.area}}m<sup>2</sup></p>
-        <button type="button" class="btn btn-secondary border-0 bg-transparent text-black-50"
+        <h4 class="card-title m-0">{{serviceElement.name}}</h4>
+        <p class="card-text"><mark>Loại dịch vụ: <b>{{serviceElement.serviceType.name}}</b></mark></p>
+        <p class="card-text">Diện tích phòng: {{serviceElement.area}}m<sup>2</sup></p>
+        <p class="card-text"><small class="text-muted">Tối đa: {{serviceElement.maxPeople}} người</small></p>
+        <p class="card-text"><small class="text-muted">Thuê theo : {{serviceElement.rentType.name}}</small></p>
+        <p class="card-text"><small class="text-muted">Chi phí : {{serviceElement.serviceCost | currency}}</small></p>
+        <button type="button" class="btn btn-secondary "
                 data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
-          <i class="fa fa-circle-info"></i> Xem thêm
+          <i class="fa fa-circle-info"></i> Xem thêm chi tiết
         </button>
       </div>
     </div>
+
   </div>
   <div class="pagination" style="display: flex;justify-content: center;">
     <a href="#">&laquo;</a>
@@ -82,7 +71,7 @@
             <div class="form-group">
               <label>Kiểu thuê</label>
               <select class="custom-select" name="rentTypeEdit" id="rentTypeEdit">
-                <option th:each="rentTypes : ${rentTypeList}" th:value="${rentTypes.id}" th:text="${rentTypes.name}">
+                <option>
                 </option>
               </select>
             </div>
@@ -91,7 +80,7 @@
             <div class="form-group">
               <label>Loại dịch vụ</label>
               <select class="custom-select" name="serviceTypeEdit" id="serviceTypeEdit" onchange="changeServiceTypeEdit()">
-                <option th:each="serviceTypes : ${serviceTypeList}" th:value="${serviceTypes.id}" th:text="${serviceTypes.name}">
+                <option>
                 </option>
               </select>
             </div>
@@ -124,7 +113,7 @@
           <textarea class="form-control" name="descriptionEdit" id="descriptionEdit" rows="3" placeholder="Nhập mô tả" required></textarea>
         </div>
         <div class="form-group">
-          <button type="button" class="btn btn-dark btn-block mb-4" id="buttonEditService">Xác nhận</button>
+          <button type="button" class="btn btn-outline-dark btn-block mb-4" id="buttonEditService">Xác nhận</button>
         </div>
       </div>
     </div>
@@ -132,7 +121,7 @@
 </div>
 <!-- Modal edit -->
 <!-- Modal addNew -->
-<div class="modal fade bd-example-modal-lg" id="addNew" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+<div class="modal fade bd-example-modal-lg" id="addNewService" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
   <div class="modal-dialog modal-lg">
     <div class="modal-content bg-light">
       <div class="modal-header bg-dark" >
@@ -156,7 +145,7 @@
             </div>
             <div class="form-group">
               <label>Diện tích</label>
-              <input type="number" [(ngModel)]="service.area"  class="form-control datepicker" placeholder="Nhập diện tích" required>
+              <input type="number"  class="form-control datepicker" placeholder="Nhập diện tích" required>
             </div>
             <div class="form-group">
               <label>Số người tối đa</label>
@@ -214,7 +203,7 @@
           <textarea class="form-control"  rows="3" placeholder="Nhập mô tả" required></textarea>
         </div>
         <div class="form-group">
-          <button type="button" class="btn btn-dark btn-block mb-4" (click)="addNewService()">Xác nhận</button>
+          <button type="button" class="btn btn-outline-dark btn-block mb-4" >Xác nhận</button>
         </div>
       </div>
     </div>
@@ -234,9 +223,9 @@
       <div class="modal-body text-center" id="bodyDeleteService">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Đóng</button>
         <input hidden type="text" name="idDelete" id="idDelete">
-        <button type="button" class="btn btn-danger" id="buttonDeleteService">Đồng ý</button>
+        <button type="button" class="btn btn-outline-danger" id="buttonDeleteService">Đồng ý</button>
       </div>
     </div>
   </div>

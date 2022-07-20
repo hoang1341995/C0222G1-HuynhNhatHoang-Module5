@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Iservice} from "./iservice";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-service',
@@ -7,31 +8,21 @@ import {Iservice} from "./iservice";
   styleUrls: ['./service.component.css']
 })
 export class ServiceComponent implements OnInit {
-
   // @ts-ignore
-  service: Iservice = {};
-  services : Iservice[] = [
-    { name: "PHÒNG SUPERIOR HƯỚNG VƯỜN",
-      area: 50,
-      url: "assets/img/service/img1.jpg"},
-    { name: "PHÒNG STUDIO SUITE HƯỚNG BIỂN",
-      area: 40,
-      url: "assets/img/service/img2.jpg"},
-    { name: "PHÒNG DELUXE HƯỚNG VƯỜN",
-      area: 43,
-      url: "assets/img/service/img3.jpg"},
-    { name: "PHÒNG PRESIDENTIAL SUITE",
-      area: 130,
-      url: "assets/img/service/img4.jpg"}
-  ];
-  constructor() { }
+  services : Iservice[];
+
+  constructor(private http:HttpClient){ }
 
   ngOnInit(): void {
-  }
+    this.getListService()
+    }
 
-  addNewService(){
-    this.services.push(this.service);
-    console.log(this.services)
+  getListService():void{
+    this.http.get<any>('http://localhost:8080/service/getServiceList').subscribe(data => {
+      this.services = data;
+      console.log(this.services)
+      return data;
+    })
   }
 
 }
