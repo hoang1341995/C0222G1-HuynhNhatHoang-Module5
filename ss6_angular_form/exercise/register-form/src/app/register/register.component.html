@@ -1,0 +1,100 @@
+<div class="container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm">
+    <fieldset>
+      <div class="row mb-3">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" formControlName="email" id="email"  placeholder="Enter Email">
+          <p class="text-danger" *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.dirty">
+            Vui lòng nhập email
+          </p>
+          <p class="text-danger" *ngIf="registerForm.controls.email.hasError('email') && registerForm.controls.email.dirty">
+            Email không đúng định dạng
+          </p>
+        </div>
+      </div>
+        <div class="row mb-3">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" formControlName="password"  placeholder="Enter Password">
+            <p class="text-danger" *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.dirty">
+              Vui lòng nhập password
+            </p>
+            <p class="text-danger" *ngIf="registerForm.controls.password.hasError('minlength') && registerForm.controls.password.dirty">
+              mật khẩu phải hơn 6 kí tự
+            </p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputConfirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputConfirmPassword" formControlName="confirmPassword"  placeholder="Enter Confirm Password">
+            <p class="text-danger" *ngIf="registerForm.controls.confirmPassword.hasError('required') && registerForm.controls.confirmPassword.dirty">
+              Vui lòng nhập password
+            </p>
+            <p class="text-danger" *ngIf="registerForm.controls.confirmPassword.hasError('minlength') && registerForm.controls.confirmPassword.dirty">
+              mật khẩu phải hơn 6 kí tự
+            </p>
+            <p class="text-danger"  *ngIf="registerForm.errors?.errorpassword">
+              không khớp
+            </p>
+          </div>
+        </div>
+      <div class="row mb-3">
+        <label for="inputCountry" class="col-sm-2 col-form-label">Country</label>
+        <div class="col-sm-10">
+          <select class="form-select" aria-label="Default select example" id="inputCountry" formControlName="country">
+            <option *ngFor="let listCountrys of listCountry">
+              {{listCountrys.name}}
+            </option>
+          </select>
+          <p class="text-danger" *ngIf="registerForm.controls.country.hasError('required') && registerForm.controls.country.dirty">
+            Vui lòng nhập Đất nước
+          </p>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputAge" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="inputAge"  formControlName="age" placeholder="Enter Age">
+          <p class="text-danger" *ngIf="registerForm.controls.age.hasError('required') && registerForm.controls.age.dirty">
+            Vui lòng nhập tuổi
+          </p>
+          <p class="text-danger" *ngIf="registerForm.controls.age.hasError('not18age') && registerForm.controls.age.dirty">
+            Chưa đủ 18 tuổi
+          </p>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Gender</label>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="Nam" formControlName="gender" checked>
+            <label class="form-check-label">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="Nữ" formControlName="gender" >
+            <label class="form-check-label">
+              Female
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="inputPhone" formControlName="phone" placeholder="Enter Phone">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 offset-sm-2">
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid" (click)="submitForm()">Register</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+</div>

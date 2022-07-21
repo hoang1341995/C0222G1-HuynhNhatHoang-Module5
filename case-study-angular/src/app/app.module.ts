@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { CustomerComponent } from './customer/customer.component';
+import { CustomerComponent } from './group-customer/customer/customer.component';
 import { ServiceComponent } from './service/service.component';
 import { ContractComponent } from './contract/contract.component';
 import {FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { EditCustomerComponent } from './group-customer/edit-customer/edit-customer.component';
+import { DeleteCustomerComponent } from './group-customer/delete-customer/delete-customer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     CustomerComponent,
     ServiceComponent,
-    ContractComponent
+    ContractComponent,
+    EditCustomerComponent,
+    DeleteCustomerComponent
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center text-dark mt-5">Đăng nhập</h2>
+      <div class="text-center mb-5 text-dark">không <span class="bg-warning">bao giờ bị</span> bug..</div>
+      <div class="card my-5">
+
+        <form class="card-body cardbody-color p-lg-5" [formGroup]="loginForm" >
+
+          <div class="text-center">
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                 width="200px" alt="profile">
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control text-warning" id="email"formControlName="email"  placeholder="Tên tài khoản">
+            <p class="text-danger" *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.dirty">
+              Vui lòng nhập email
+            </p>
+            <p class="text-danger" *ngIf="loginForm.controls.email.hasError('email') && loginForm.controls.email.dirty">
+              Email không đúng định dạng
+            </p>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control text-warning" id="password" formControlName="password" placeholder="Mật khẩu">
+            <p class="text-danger" *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.password.dirty">
+              Vui lòng nhập password
+            </p>
+            <p class="text-danger" *ngIf="loginForm.controls.password.hasError('minlength') && loginForm.controls.password.dirty">
+              mật khẩu phải hơn 6 kí tự
+            </p>
+          </div>
+          <div class="text-center"><button type="submit" class="btn btn-outline-warning px-5 mb-5 w-100">Đăng nhập</button></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
