@@ -1,0 +1,12 @@
+<h1>Dictionary
+</h1>
+<table>
+  <tr>
+    <th>English</th>
+    <th>Option</th>
+  </tr>
+  <tr *ngFor="let elements of dictionarys">
+    <td>{{elements.en}}</td>
+    <td><button routerLink="/detail/{{elements.en}}">Detail</button></td>
+  </tr>
+</table>
