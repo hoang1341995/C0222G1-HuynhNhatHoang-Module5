@@ -1,4 +1,4 @@
-<body id="body">
+<body id="body" xmlns="http://www.w3.org/1999/html">
 <div class="container-fluid d-flex">
   <div class="left col-12">
     <div class="d-flex m-2">
@@ -23,7 +23,7 @@
         <button type="button" class="btn btn-outline-info mb-2" style="margin-right: 2px" data-toggle="modal" data-target="#addNew">Thêm mới khách hàng</button>
       </div>
     </div>
-    <table id="tables" class="table table-striped table-active table-hover" style="width:100%">
+    <table id="tables" class="table table-striped table-active table-hover " style="width:100%">
       <thead>
       <tr>
         <th>ID</th>
@@ -40,7 +40,7 @@
       </tr>
       </thead>
       <tbody id="bodyTable">
-      <tr *ngFor="let customerElement of customers">
+      <tr *ngFor="let customerElement of customers" >
         <td>{{customerElement.id}}</td>
         <td>{{customerElement.code}}</td>
         <td>{{customerElement.name}}</td>
@@ -53,14 +53,8 @@
         <td>{{customerElement.address}}</td>
         <td>{{customerElement.customerType.name}}</td>
         <td>
-          <button type="button" class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#edit"
-                  onclick="editModalCustomer('${row.getId}', '${row.getCode}', '${row.getName}'
-                                                        , '${row.getGender}', '${row.getBirthday}', '${row.getIdCard}'
-                                                        , '${row.getPhone}', '${row.getEmail}', '${row.getAddress}'
-                                                        , '${row.getCustomerType.getId}')">Sửa</button>
-          <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delete"
-                  onclick="deleteModalCustomer('${row.getId}', '${row.getCode}', '${row.getName}')" >Xóa
-          </button>
+          <app-edit-customer [idCustomerEdit]="customerElement.id+''" (eventEmitter)="loadList($event)"></app-edit-customer>
+          <app-delete-customer [customerDelete]="customerElement"  (eventEmitter)="loadList($event)"></app-delete-customer>
         </td>
 
       </tr>
@@ -80,150 +74,68 @@
         </button>
       </div>
       <div class="modal-body">
+        <form [formGroup]="customerForm" (submit)="addNewCustomer()">
         <div class="d-flex">
           <div class="col-6">
-            <input type="text" hidden name="id" id="id">
             <div class="form-group">
               <label>Mã khách hàng</label>
-              <input type="text" class="form-control" id="code" name="code" [(ngModel)]="customer.code" placeholder="Nhập mã khách hàng" >
+              <input type="text" class="form-control"  formControlName="code" placeholder="Nhập mã khách hàng" >
+<!--              <p class="text-danger" *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.code.dirty">-->
+<!--                Vui lòng nhập mã khách hàng-->
+<!--              </p>-->
             </div>
             <div class="form-group">
               <label>Tên khách hàng</label>
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="customer.name" placeholder="Nhập tên khách hàng" >
+              <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên khách hàng" >
+              <p class="text-danger" *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.dirty">
+                Vui lòng nhập tên khách hàng
+              </p>
             </div>
-            <div class="form-group">
+            <div class="form-group" formGroupName="customerType">
               <label>Loại khách hàng</label>
-              <select class="custom-select" id="customerType" name="customerType" [(ngModel)]="customer.customerType.id" >
-                <option *ngFor="let customerTypes of customerType" value="{{customerTypes.id}}">{{customerTypes.name}}</option>
+              <select class="custom-select" formControlName="id" >
+                <option *ngFor="let customerTypes of customerType; let i = index" value="{{customerTypes.id}}"
+                        [attr.selected]="i==0 ? true : null">{{customerTypes.name}}</option>
               </select>
             </div>
             <div class="form-group">
               <label>Ngày Sinh</label>
-              <input placeholder="Selected date" type="date" id="birthday" name="birthday" [(ngModel)]="customer.birthday" class="form-control datepicker" >
+              <input placeholder="Selected date" type="date" formControlName="birthday" class="form-control datepicker" >
             </div>
           </div>
           <div class="col-6">
             <div class="form-group">
               <label>Giới tính</label>
-              <select class="custom-select" id="gender" name="gender" [(ngModel)]="customer.gender" >
+              <select class="custom-select" formControlName="gender">
                 <option value="1">Nam</option>
                 <option value="0">Nữ</option>
               </select>
             </div>
             <div class="form-group">
               <label>Số CMND</label>
-              <input type="text" class="form-control"  id="idCard" name="idCard" [(ngModel)]="customer.idCard"  placeholder="Nhập số CMND" >
+              <input type="text" class="form-control" formControlName="idCard" placeholder="Nhập số CMND" >
             </div>
             <div class="form-group">
               <label>Số Điện thoại</label>
-              <input type="text" class="form-control" id="phone" name="phone"  [(ngModel)]="customer.phone" placeholder="Nhập số Điện thoại" >
+              <input type="text" class="form-control" formControlName="phone" placeholder="Nhập số Điện thoại" >
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="customer.email" placeholder="Nhập Email" >
+              <input type="email" class="form-control" formControlName="email" placeholder="Nhập Email" >
             </div>
           </div>
         </div>
         <div class="form-group">
           <label>Địa chỉ</label>
-          <textarea class="form-control" id="address" name="address" rows="3" [(ngModel)]="customer.address" placeholder="Nhập điện chỉ"></textarea>
+          <textarea class="form-control" rows="3" formControlName="address" placeholder="Nhập địa chỉ"></textarea>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-outline-dark btn-block mb-4" (click)="addNewCustomer()">Xác nhận</button>
+          <button type="submit" class="btn btn-outline-dark btn-block mb-4" >Xác nhận</button>
         </div>
+        </form>
+      </div>
       </div>
     </div>
   </div>
-</div>
 <!-- Modal addnew -->
-<!-- Modal edit -->
-<div class="modal fade bd-example-modal-lg" id="edit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content bg-light">
-      <div class="modal-header bg-dark" >
-        <h5 class="modal-title text-white" >Sửa khách hàng</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span class="text-white" aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" id="idEdit" name="idEdit"/>
-
-        <div class="d-flex">
-          <div class="col-6">
-            <div class="form-group">
-              <label>Mã khách hàng</label>
-              <input type="text" class="form-control" id="codeEdit" name="codeEdit" placeholder="Nhập mã khách hàng" >
-            </div>
-            <div class="form-group">
-              <label>Tên khách hàng</label>
-              <input type="text" class="form-control" id="nameEdit" name="nameEdit" placeholder="Nhập tên khách hàng" >
-            </div>
-            <div class="form-group">
-              <label>Loại khách hàng</label>
-              <select class="custom-select" id="customerTypeEdit" name="customerTypeEdit">
-                <option>Diamond</option>
-                <option>Gold</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Ngày Sinh</label>
-              <input placeholder="Selected date" type="date" id="birthdayEdit" name="birthdayEdit" class="form-control datepicker" >
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="form-group">
-              <label>Giới tính</label>
-              <select class="custom-select" id="genderEdit" name="genderEdit" >
-                <option>Nam</option>
-                <option>Nữ</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Số CMND</label>
-              <input type="text" class="form-control"  id="idCardEdit" name="idCardEdit"  placeholder="Nhập số CMND" >
-            </div>
-            <div class="form-group">
-              <label>Số Điện thoại</label>
-              <input type="text" class="form-control" id="phoneEdit" name="phoneEdit" placeholder="Nhập số Điện thoại" >
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" class="form-control" id="emailEdit" name="emailEdit" placeholder="Nhập Email" >
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Địa chỉ</label>
-          <textarea class="form-control" id="addressEdit" name="addressEdit" rows="3" placeholder="Nhập điện chỉ"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn btn-outline-dark btn-block mb-4" id="buttonEditCustomer">Xác nhận</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal edit -->
-<!-- Modal delete -->
-<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabeldelete" aria-hidden="true" data-backdrop="false">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content bg-light">
-      <div class="modal-header bg-dark" >
-        <h5 class="modal-title text-white" >Xóa khách hàng</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span class="text-white" aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body text-center" id="bodyDeleteCustomer">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Đóng</button>
-        <input hidden type="text" name="idDelete" id="idDeleteCustomer">
-        <button type="button" class="btn btn-outline-danger" id="buttonDeleteCustomer">Đồng ý</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal delete -->
 </body>

@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#delete">Xóa
+</button>
+
+<!-- Modal delete -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabeldelete" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-ms">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-dark" >
+        <h5 class="modal-title text-white" >Xóa khách hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center" >
+        Mã khách hàng: <b style='color: #005cbf'>{{customerDelete.code}}</b><br>
+        Tên khách hàng <b style='color: #005cbf'>{{customerDelete.name}}</b><br>
+        Xóa khách hàng này chứ ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-outline-danger" (click)="removeCustomer()" id="buttonDeleteCustomer">Đồng ý</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal delete -->

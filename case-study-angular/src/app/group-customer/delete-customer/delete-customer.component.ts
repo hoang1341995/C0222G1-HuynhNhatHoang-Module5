@@ -1,4 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Icustomer} from "../icustomer";
+import {CustomerService} from "../customer.service";
 
 @Component({
   selector: 'app-delete-customer',
@@ -7,11 +9,42 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class DeleteCustomerComponent implements OnInit {
 
-  @Input() idCustomerDelete : number = 0
+  // @ts-ignore
+  @Input() customerDelete: Icustomer = {
+    id: 0,
+    code:"",
+    name:"",
+    customerType: {
+      id: 0,
+      name: ""
+    },
+    birthday:"",
+    gender:0,
+    idCard:"",
+    phone:"",
+    email:"",
+    address:""
+  };
 
-  constructor() { }
+  @Output()
+  eventEmitter = new EventEmitter();
+
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
   }
 
+  removeCustomer(){
+    this.customerService.removeCustomer(this.customerDelete).subscribe(
+      res => {
+        // this.getListCustomer();
+        // alert("Xóa thành công")
+        this.eventEmitter.emit(this.customerDelete.id);
+        // this.router.navigateByUrl('/contract');
+      },
+      err => {
+        alert("Lỗi xóa khách hàng. lỗi: " + err.status);
+      }
+    );
+  }
 }

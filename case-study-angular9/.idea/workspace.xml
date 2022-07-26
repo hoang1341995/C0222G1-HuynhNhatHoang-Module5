@@ -1,64 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6e4a12b-791e-4336-b2cc-d40ace82918e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/footer/footer.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/app/header/header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/all.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/dataTables.bootstrap4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/css/loading.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/form/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/form/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/form/nav-bar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-contract.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-customer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-employee.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/js-service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js-furama/menu-nav-bar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/dataTables.bootstrap4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/jquery-3.6.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/bootstrap/js/jquery.dataTables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/img/img-furama/banner01.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/assets/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_study_angular/tsconfig.spec.json" beforeDir="false" />
+    <list default="true" id="97c7e156-d895-4306-8be6-ec0f0f3063fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/footer/footer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/footer/footer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/footer/footer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-contract/contract/contract.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-contract/contract/contract.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-contract/contract/contract.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-contract/icontract.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/customer.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/customer/customer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/customer/customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/customer/customer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/delete-customer/delete-customer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/delete-customer/delete-customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/delete-customer/delete-customer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/edit-customer/edit-customer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/edit-customer/edit-customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/edit-customer/edit-customer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/group-customer/icustomer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/header/header.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/header/header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/header/header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service/iservice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service/service.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service/service.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/service/service.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/css/loading.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/form/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/form/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/form/nav-bar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js-furama/js-contract.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js-furama/js-customer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js-furama/js-employee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js-furama/js-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js-furama/menu-nav-bar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/bootstrap/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/carousel/img1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/carousel/img2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/img-furama/banner01.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/service/img9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_connect_back_end/exercise/angular-name-card/src/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss9_connect_back_end/practice/product-management/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/customer/customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/customer/customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/customer/customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/customer/customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/delete-customer/delete-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/delete-customer/delete-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/delete-customer/delete-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/delete-customer/delete-customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/edit-customer/edit-customer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/edit-customer/edit-customer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/edit-customer/edit-customer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/edit-customer/edit-customer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/edit-customer/edit-customer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/icustomer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/app/group-customer/icustomer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study-angular/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study-angular/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_angular_form/exercise/register-form/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss6_angular_form/exercise/register-form/src/app/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_service_and_router/exercise/dictionary/src/app/dictinary.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7_service_and_router/exercise/dictionary/src/app/dictinary.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_service_and_router/exercise/dictionary/src/app/dictionary-page/dictionary-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7_service_and_router/exercise/dictionary/src/app/dictionary-page/dictionary-page.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,26 +100,35 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2C9SV8lFKplhOuUPkZ2ukBCIhHX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2CNjPpg2W37AT6l3bWZUmB0Wzih" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/hoanghuynh/Desktop/module5/C0222G1-HuynhNhatHoang-Module5/case-study-angular9/src/assets",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/hoanghuynh/Desktop/module5/C0222G1-HuynhNhatHoang-Module5/case-study-angular9/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hoanghuynh/Desktop/module5/C0222G1-HuynhNhatHoang-Module5/case-study-angular9/src&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/hoanghuynh/Desktop/module5/C0222G1-HuynhNhatHoang-Module5/case-study-angular9/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/group-contract" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -99,6 +137,14 @@
       <working-directory value="$PROJECT_DIR$" />
       <node-interpreter value="project" />
       <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (case-study-angular9)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
       <method v="2" />
     </configuration>
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
@@ -118,16 +164,36 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d6e4a12b-791e-4336-b2cc-d40ace82918e" name="Changes" comment="" />
-      <created>1658213331651</created>
+      <changelist id="97c7e156-d895-4306-8be6-ec0f0f3063fe" name="Changes" comment="" />
+      <created>1658649914641</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1658213331651</updated>
-      <workItem from="1658213334264" duration="596000" />
+      <updated>1658649914641</updated>
+      <workItem from="1658649916811" duration="6754000" />
+      <workItem from="1658677040968" duration="3132000" />
+      <workItem from="1658710849088" duration="295000" />
+      <workItem from="1658712614476" duration="1086000" />
+      <workItem from="1658715317251" duration="7399000" />
+      <workItem from="1658738558442" duration="2858000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

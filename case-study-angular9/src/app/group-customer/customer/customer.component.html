@@ -1,0 +1,294 @@
+<body id="body" xmlns="http://www.w3.org/1999/html">
+<div class="container-fluid d-flex">
+  <div class="left col-12">
+    <div class="d-flex m-2">
+      <div class="col-8">
+        <h1>Danh sách khách hàng</h1>
+      </div>
+      <div class="col-4 m-2">
+          <app-search-customer (eventEmitter)="search($event)"></app-search-customer>
+      </div>
+    </div>
+    <div id="message" style="color: dodgerblue;font-size: 24px"></div>
+    <div class="d-flex">
+      <div class="col-10">
+      </div>
+      <div class="col-2 text-right">
+        <button type="button" class="btn btn-outline-info mb-2" style="margin-right: 2px" data-toggle="modal" data-target="#addNew">Thêm mới khách hàng</button>
+      </div>
+    </div>
+    <table id="tables" class="table table-striped table-active table-hover " style="width:100%">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Mã</th>
+        <th>Tên khách hàng</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Số CMND</th>
+        <th>Điện thoại</th>
+        <th>Email</th>
+        <th>Địa chỉ</th>
+        <th>Loại khách hàng</th>
+        <th>Tuỳ chọn</th>
+      </tr>
+      </thead>
+      <tbody id="bodyTable">
+      <tr *ngFor="let customerElement of customers " >
+        <td>{{customerElement.id}}</td>
+        <td>{{customerElement.code}}</td>
+        <td>{{customerElement.name}}</td>
+        <td>{{customerElement.birthday}}</td>
+        <td *ngIf="customerElement.gender == 1">Nam</td>
+        <td *ngIf="customerElement.gender == 0">Nữ</td>
+        <td>{{customerElement.idCard}}</td>
+        <td>{{customerElement.phone}}</td>
+        <td>{{customerElement.email}}</td>
+        <td>{{customerElement.address}}</td>
+        <td>{{customerElement.customerType.name}}</td>
+        <td>
+          <app-edit-customer [idCustomerEdit]="customerElement.id+''" (eventEmitter)="loadList($event)" (eventSendIdCustomerEdit)="getIdCustomerEdit($event)"></app-edit-customer>
+          <app-delete-customer [customerDelete]="customerElement"  (eventEmitter)="loadList($event)"></app-delete-customer>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="pagination" style="display: flex;justify-content: center;">
+  <a href="#">&laquo;</a>
+  <a class="active" href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+<!-- Modal addnew -->
+<div class="modal fade bd-example-modal-lg" id="addNew" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-dark" >
+        <h5 class="modal-title text-white" >Thêm mới khách hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="customerForm" (submit)="addNewCustomer()">
+        <div class="d-flex">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Mã khách hàng</label>
+              <input type="text" class="form-control"  formControlName="code" placeholder="Nhập mã khách hàng" >
+              <p class="text-danger" *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.code.dirty">
+                Vui lòng nhập mã khách hàng
+              </p>
+              <p class="text-danger" *ngIf="customerForm.controls.code.hasError('pattern') && customerForm.controls.code.dirty">
+                Mã khách hàng không hợp lệ. vd: KH-0123
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Tên khách hàng</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên khách hàng" >
+              <p class="text-danger" *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.dirty">
+                Vui lòng nhập tên khách hàng
+              </p>
+              <p class="text-danger" *ngIf="customerForm.controls.name.hasError('minlength') && customerForm.controls.name.dirty">
+                Tên khách hàng quá ngắn
+              </p>
+            </div>
+            <div class="form-group" formGroupName="customerType">
+              <label>Loại khách hàng</label>
+              <select class="custom-select" formControlName="id" >
+
+                <option *ngFor="let customerTypes of customerType; let i = index" value="{{customerTypes.id}}"
+                         >{{customerTypes.name}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Ngày Sinh</label>
+              <input placeholder="Selected date" type="date" formControlName="birthday" class="form-control datepicker" >
+              <p class="text-danger" *ngIf="customerForm.controls.birthday.hasError('required') && customerForm.controls.birthday.dirty">
+                Vui lòng nhập ngày sinh
+              </p>
+              <p class="text-danger" *ngIf="customerForm.controls.birthday.hasError('not18age') && customerForm.controls.birthday.dirty">
+                Khách hàng chưa đủ 18 tuổi
+              </p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Giới tính</label>
+              <select class="custom-select" formControlName="gender">
+                <option value="1">Nam</option>
+                <option value="0">Nữ</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Số CMND</label>
+              <input type="text" class="form-control" formControlName="idCard" placeholder="Nhập số CMND" >
+              <p class="text-danger" *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.dirty">
+                Chưa nhập CMND
+              </p>
+              <p class="text-danger" *ngIf="customerForm.controls.idCard.hasError('pattern') && customerForm.controls.idCard.dirty">
+                CMND không hợp lệ
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Số Điện thoại</label>
+              <input type="text" class="form-control" formControlName="phone" placeholder="Nhập số Điện thoại" >
+              <p class="text-danger" *ngIf="customerForm.controls.phone.hasError('required') && customerForm.controls.phone.dirty">
+                Chưa nhập Số điện thoại
+              </p>
+              <p class="text-danger" *ngIf="customerForm.controls.phone.hasError('pattern') && customerForm.controls.phone.dirty">
+                Số điện thoại không hợp lệ
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Nhập Email" >
+              <p class="text-danger" *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.dirty">
+                Chưa nhập Email
+              </p>
+              <p class="text-danger" *ngIf="customerForm.controls.email.hasError('email') && customerForm.controls.email.dirty">
+                Email không hợp lệ
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Địa chỉ</label>
+          <textarea class="form-control" rows="3" formControlName="address" placeholder="Nhập địa chỉ"></textarea>
+          <p class="text-danger" *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.dirty">
+            Chưa nhập địa chỉ
+          </p>
+          <p class="text-danger" *ngIf="customerForm.controls.address.hasError('minlength') && customerForm.controls.address.dirty">
+            địa chỉ không hợp lệ
+          </p>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-dark btn-block mb-4" [disabled]="customerForm.invalid" >Xác nhận</button>
+        </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal addnew -->
+<!-- Modal edit -->
+<div class="modal fade bd-example-modal-lg" id="edit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-dark" >
+        <h5 class="modal-title text-white" >Sửa khách hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="customerEditForm" (ngSubmit)="saveCustomer()">
+          <input type="hidden" formControlName="id" />
+
+          <div class="d-flex">
+            <div class="col-6">
+              <div class="form-group">
+                <label>Mã khách hàng</label>
+                <input type="text" class="form-control"  formControlName="code" placeholder="Nhập mã khách hàng" >
+                <p class="text-danger" *ngIf="customerEditForm.controls.code.hasError('required')">
+                  Vui lòng nhập mã khách hàng
+                </p>
+                <p class="text-danger" *ngIf="customerEditForm.controls.code.hasError('pattern')">
+                  Mã khách hàng không hợp lệ. vd: KH-0123
+                </p>
+              </div>
+              <div class="form-group">
+                <label>Tên khách hàng</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên khách hàng" >
+                <p class="text-danger" *ngIf="customerEditForm.controls.name.hasError('required')">
+                  Vui lòng nhập tên khách hàng
+                </p>
+                <p class="text-danger" *ngIf="customerEditForm.controls.name.hasError('minlength')">
+                  Tên khách hàng quá ngắn
+                </p>
+              </div>
+              <div class="form-group" formGroupName="customerType">
+                <label>Loại khách hàng</label>
+                <select class="custom-select" formControlName="id" >
+                  <option *ngFor="let customerTypes of customerType; let i = index" value="{{customerTypes.id}}"
+                          [defaultSelected]="i==0">{{customerTypes.name}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Ngày Sinh</label>
+                <input placeholder="Selected date" type="date" formControlName="birthday" class="form-control datepicker" >
+                <p class="text-danger" *ngIf="customerEditForm.controls.birthday.hasError('required')">
+                  Vui lòng nhập ngày sinh
+                </p>
+                <p class="text-danger" *ngIf="customerEditForm.controls.birthday.hasError('not18age')">
+                  Khách hàng chưa đủ 18 tuổi
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label>Giới tính</label>
+                <select class="custom-select" formControlName="gender">
+                  <option value="1">Nam</option>
+                  <option value="0">Nữ</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Số CMND</label>
+                <input type="text" class="form-control" formControlName="idCard" placeholder="Nhập số CMND" >
+                <p class="text-danger" *ngIf="customerEditForm.controls.idCard.hasError('required')">
+                  Chưa nhập CMND
+                </p>
+                <p class="text-danger" *ngIf="customerEditForm.controls.idCard.hasError('pattern')">
+                  CMND không hợp lệ
+                </p>
+              </div>
+              <div class="form-group">
+                <label>Số Điện thoại</label>
+                <input type="text" class="form-control" formControlName="phone" placeholder="Nhập số Điện thoại" >
+                <p class="text-danger" *ngIf="customerEditForm.controls.phone.hasError('required')">
+                  Chưa nhập Số điện thoại
+                </p>
+                <p class="text-danger" *ngIf="customerEditForm.controls.phone.hasError('pattern')">
+                  Số điện thoại không hợp lệ
+                </p>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="Nhập Email" >
+                <p class="text-danger" *ngIf="customerEditForm.controls.email.hasError('required')">
+                  Chưa nhập Email
+                </p>
+                <p class="text-danger" *ngIf="customerEditForm.controls.email.hasError('email')">
+                  Email không hợp lệ
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Địa chỉ</label>
+            <textarea class="form-control" rows="3" formControlName="address" placeholder="Nhập địa chỉ"></textarea>
+            <p class="text-danger" *ngIf="customerEditForm.controls.address.hasError('required')">
+              Chưa nhập địa chỉ
+            </p>
+            <p class="text-danger" *ngIf="customerEditForm.controls.address.hasError('minlength')">
+              địa chỉ không hợp lệ
+            </p>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-outline-dark btn-block mb-4" [disabled]="customerEditForm.invalid" >Xác nhận</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal edit -->
+</body>

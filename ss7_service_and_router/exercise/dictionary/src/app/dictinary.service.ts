@@ -9,7 +9,7 @@ export class DictinaryService {
   dictionarys: Dictionary[] = [
     {vi: 'đỏ', en: 'red'},
     {vi: 'vàng', en: 'yellow'},
-    {vi: 'đen', en: 'black'},
+    {vi: 'tím', en: 'violet'},
     {vi: 'trắng', en: 'white'},
     {vi: 'xanh', en: 'blue'}
   ];

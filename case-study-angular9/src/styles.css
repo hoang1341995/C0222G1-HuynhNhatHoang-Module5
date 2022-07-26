@@ -1,0 +1,65 @@
+/* backgroup*/
+:root {
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  --bd-accent-rgb: 255, 228, 132;
+  --bd-pink-rgb: 214, 51, 132;
+  --bs-primary-rgb: 13, 110, 253;
+  --bs-body-bg-rgb: 255, 255, 255;
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background-image: linear-gradient(180deg,
+  rgba(var(--bs-body-bg-rgb), 0.01),
+  rgba(var(--bs-body-bg-rgb), 1) 85%),
+  radial-gradient(ellipse at top left,
+    rgba(var(--bs-primary-rgb), 0.5), transparent 50%),
+  radial-gradient(ellipse at top right,
+    rgba(var(--bd-accent-rgb), 0.5), transparent 50%),
+  radial-gradient(ellipse at center right,
+    rgba(var(--bd-violet-rgb), 0.5), transparent 50%),
+  radial-gradient(ellipse at center left,
+    rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
+}
+/* backgroup*/
+/* .classNew{*/
+/*   background-color: #04AA6D;*/
+/*   transition: background-color 1s;*/
+/* }*/
+/*tr {*/
+/*  background-color: white;*/
+/*  transition: background-color 1s;*/
+/*}*/
+
+
+
+/*phân trang*/
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+
+.div-group-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-flex {
+  flex: 1 0 21%; /* explanation below */
+}
+/*phân trang*/

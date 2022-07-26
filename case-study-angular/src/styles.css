@@ -20,3 +20,11 @@ body {
   radial-gradient(ellipse at center left,
     rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
 }
+/* .classNew{*/
+/*   background-color: #04AA6D;*/
+/*   transition: background-color 1s;*/
+/* }*/
+/*tr {*/
+/*  background-color: white;*/
+/*  transition: background-color 1s;*/
+/*}*/

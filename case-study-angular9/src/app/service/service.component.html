@@ -1,0 +1,233 @@
+<div class="container-fluid">
+  <div class="div-group-flex">
+
+    <div class="card m-2 container-image card-flex" *ngFor="let serviceElement of services" >
+      <img class="card-img-top " src="assets/img/service/img{{serviceElement.id}}.jpg" alt="Card image cap">
+      <div class="middle">
+        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editService">Chỉnh sửa</button>
+        <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#modalDelete">
+          Xóa
+        </button>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title m-0">{{serviceElement.name}}</h4>
+        <p class="card-text"><mark>Loại dịch vụ: <b>{{serviceElement.serviceType.name}}</b></mark></p>
+        <p class="card-text">Diện tích phòng: {{serviceElement.area}}m<sup>2</sup></p>
+        <p class="card-text"><small class="text-muted">Tối đa: {{serviceElement.maxPeople}} người</small></p>
+        <p class="card-text"><small class="text-muted">Thuê theo : {{serviceElement.rentType.name}}</small></p>
+        <p class="card-text"><small class="text-muted">Chi phí : {{serviceElement.serviceCost | currency}}</small></p>
+        <button type="button" class="btn btn-secondary "
+                data-toggle="tooltip" data-placement="bottom" title="Xem thêm chi tiết">
+          <i class="fa fa-circle-info"></i> Xem thêm chi tiết
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div class="pagination" style="display: flex;justify-content: center;">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a class="active" href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+  </div>
+</div>
+<!-- Modal edit -->
+<div class="modal fade bd-example-modal-lg" id="edit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-dark" >
+        <h5 class="modal-title text-white" >Sửa dịch vụ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex">
+          <input type="text" hidden name="idEdit" id="idEdit" >
+          <div class="col-6">
+            <div class="form-group">
+              <label>Mã dịch vụ</label>
+              <input type="text" class="form-control" name="codeEdit" id="codeEdit"
+                     placeholder="Nhập mã dịch vụ" required>
+            </div>
+            <div class="form-group">
+              <label>Tên dịch vụ</label>
+              <input type="text" class="form-control" name="nameEdit" id="nameEdit"
+                     placeholder="Nhập tên dịch vụ" required>
+            </div>
+            <div class="form-group">
+              <label>Diện tích</label>
+              <input type="number" name="areaEdit" id="areaEdit"  class="form-control datepicker" placeholder="Nhập diện tích" required>
+            </div>
+            <div class="form-group">
+              <label>Số người tối đa</label>
+              <input type="number" class="form-control" name="maxPeopleEdit" id="maxPeopleEdit"
+                     placeholder="Nhập số người tối đa" required>
+            </div>
+            <div class="form-group">
+              <label>Kiểu thuê</label>
+              <select class="custom-select" name="rentTypeEdit" id="rentTypeEdit">
+                <option>
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Loại dịch vụ</label>
+              <select class="custom-select" name="serviceTypeEdit" id="serviceTypeEdit" onchange="changeServiceTypeEdit()">
+                <option>
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Loại phòng</label>
+              <select class="custom-select" name="standardRoomEdit" id="standardRoomEdit" >
+                <option value="Thường">Thường</option>
+                <option value="VIP">VIP</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Diện tích hồ bơi</label>
+              <input type="number" class="form-control" name="poolAreaEdit" id="poolAreaEdit"
+                     placeholder="Nhập diện tích hồ bơi" required>
+            </div>
+            <div class="form-group">
+              <label>Tầng</label>
+              <input type="number" class="form-control" name="floorEdit" id="floorEdit"
+                     placeholder="Nhập tầng" required>
+            </div>
+            <div class="form-group">
+              <label>Chi phí</label>
+              <input type="number" class="form-control" name="serviceCostEdit" id="serviceCostEdit"
+                     placeholder="Nhập chi phí" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mô tả</label>
+          <textarea class="form-control" name="descriptionEdit" id="descriptionEdit" rows="3" placeholder="Nhập mô tả" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-outline-dark btn-block mb-4" id="buttonEditService">Xác nhận</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal edit -->
+<!-- Modal addNew -->
+<div class="modal fade bd-example-modal-lg" id="addNewService" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-dark" >
+        <h5 class="modal-title text-white" >Thêm mới dịch vụ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Mã dịch vụ</label>
+              <input type="text" class="form-control"
+                     placeholder="Nhập mã dịch vụ" required>
+            </div>
+            <div class="form-group">
+              <label>Tên dịch vụ</label>
+              <input type="text" class="form-control"
+                     placeholder="Nhập tên dịch vụ" required>
+            </div>
+            <div class="form-group">
+              <label>Diện tích</label>
+              <input type="number"  class="form-control datepicker" placeholder="Nhập diện tích" required>
+            </div>
+            <div class="form-group">
+              <label>Số người tối đa</label>
+              <input type="number" class="form-control"
+                     placeholder="Nhập số người tối đa" required>
+            </div>
+            <div class="form-group">
+              <label>Kiểu thuê</label>
+              <select class="custom-select" >
+                <option value="Ngày">Ngày</option>
+                <option value="Tháng">Tháng</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Loại dịch vụ</label>
+              <select class="custom-select"  onchange="changeServiceType()">
+                <option value="1">Villa</option>
+                <option value="2">House</option>
+                <option value="3">Room</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Loại phòng</label>
+              <select class="custom-select"  >
+                <option value="Thường">Thường</option>
+                <option value="VIP">VIP</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Diện tích hồ bơi</label>
+              <input type="number" class="form-control"
+                     placeholder="Nhập diện tích hồ bơi" required>
+            </div>
+            <div class="form-group">
+              <label>Tầng</label>
+              <input type="number" class="form-control"
+                     placeholder="Nhập tầng" required>
+            </div>
+            <div class="form-group">
+              <label>Chi phí</label>
+              <input type="number" class="form-control"
+                     placeholder="Nhập chi phí" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Link hình ảnh dịch vụ</label>
+          <input type="text" class="form-control"
+                 placeholder="Nhập Link hình ảnh dịch vụ" required>
+        </div>
+        <div class="form-group">
+          <label>Mô tả</label>
+          <textarea class="form-control"  rows="3" placeholder="Nhập mô tả" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-outline-dark btn-block mb-4" >Xác nhận</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal addNew -->
+<!-- Modal delete -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabeldelete" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-dark" >
+        <h5 class="modal-title text-white" >Xóa dịch vụ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center" id="bodyDeleteService">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Đóng</button>
+        <input hidden type="text" name="idDelete" id="idDelete">
+        <button type="button" class="btn btn-outline-danger" id="buttonDeleteService">Đồng ý</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal delete -->

@@ -1,5 +1,5 @@
 export interface Icustomer {
-  id:number;
+  id?:number;
   code:string;
   name:string;
   customerType: {

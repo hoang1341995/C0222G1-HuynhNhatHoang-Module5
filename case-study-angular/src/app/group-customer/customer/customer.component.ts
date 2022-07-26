@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Icustomer} from "../icustomer";
-import {HttpClient} from "@angular/common/http";
+
+import {CustomerService} from "../customer.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+
 
 @Component({
   selector: 'app-customer',
@@ -8,8 +11,6 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit{
-
-  ModalAddNew: boolean = false;
 
   customer : Icustomer = {
     id: 0,
@@ -27,6 +28,8 @@ export class CustomerComponent implements OnInit{
     address:""
   };
 
+  customerForm: FormGroup;
+
   customers : Icustomer[]=[];
 
   // @ts-ignore
@@ -35,29 +38,34 @@ export class CustomerComponent implements OnInit{
     name:string;
   }[];
 
-  constructor(private http:HttpClient) { }
+
+  constructor(private customerService: CustomerService) {
+    this.customerForm = new FormGroup({
+      id: new FormControl(0),
+      code: new FormControl('',[Validators.required, Validators.pattern('^KH(\\-)[0-9]{4}$')]),
+      name: new FormControl('',Validators.required),
+      customerType: new FormGroup({
+        id: new FormControl(0,Validators.required),
+        name: new FormControl('')
+      }),
+      birthday: new FormControl('',Validators.required),
+      gender: new FormControl(0,Validators.required),
+      idCard: new FormControl('',[Validators.required,Validators.minLength(9)]),
+      phone: new FormControl('',[Validators.required,Validators.minLength(10)]),
+      email: new FormControl('',[Validators.required,Validators.email]),
+      address: new FormControl('',Validators.required),
+    })
+  }
 
   ngOnInit(): void {
-    this.getListCustomer();
+    this.getListCustomer()
     this.getListCustomerType()
   }
 
-  // @ts-ignore
-  getListCustomer():void{
-    this.http.get<any>('http://localhost:8080/customer/customerList').subscribe(data => {
-      this.customers = data;
-      console.log(this.customers)
-    })
-  }
-  getListCustomerType():void{
-    this.http.get<any>('http://localhost:8080/customer/customerTypeList').subscribe(data => {
-      this.customerType = data;
-      console.log(this.customerType)
-    })
-  }
-
-  addNewCustomer() {
-    this.http.post('http://localhost:8080/customer/addNewCustomer',this.customer).subscribe(
+  addNewCustomer(){
+    console.log(this.customerForm)
+    // @ts-ignore
+    this.customerService.addNewCustomer(this.customerForm.value).subscribe(
       res => {
         this.getListCustomer();
         alert("Thêm thành công");
@@ -67,5 +75,34 @@ export class CustomerComponent implements OnInit{
       }
     );
   }
+
+  getListCustomer() {
+    this.customerService.getListCustomer().subscribe(listCustomer => {
+      this.customers = listCustomer;
+    })
+  };
+  getListCustomerType() {
+    this.customerService.getListCustomerType().subscribe(listCustomerType => {
+      this.customerType = listCustomerType;
+    })
+  };
+
+  removeCustomer(){
+    this.customerService.removeCustomer(this.customer).subscribe(
+      res => {
+        this.getListCustomer();
+        alert("Thêm thành công");
+      },
+      err => {
+        alert("Lỗi thêm mới khách hàng. lỗi: " + err.status);
+      }
+    );
+  }
+
+
+  loadList(value: any) {
+    this.getListCustomer()
+  }
+
 
 }

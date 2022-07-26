@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
       country: new FormControl('', Validators.required),
       age: new FormControl('', [Validators.required, this.check18Age]),
       gender: new FormControl('', Validators.requiredTrue),
-      phone: new FormControl('', Validators.required)
+      phone: new FormControl('', [Validators.required, Validators.pattern('^(84|0[3|5|7|8|9])+([0-9]{8})$')])
     }, this.checkPassword);
     console.log(this.registerForm);
   }

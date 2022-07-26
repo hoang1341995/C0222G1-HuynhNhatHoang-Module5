@@ -6,7 +6,7 @@
     <th>Option</th>
   </tr>
   <tr *ngFor="let elements of dictionarys">
-    <td>{{elements.en}}</td>
-    <td><button routerLink="/detail/{{elements.en}}">Detail</button></td>
+    <td [style.color]="elements.en" >{{elements.en}}</td>
+    <td><button routerLink="/detail/{{elements.en}}" [style.background-color]="elements.en">Detail</button></td>
   </tr>
 </table>

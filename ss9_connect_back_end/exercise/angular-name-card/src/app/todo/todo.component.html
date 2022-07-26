@@ -1,0 +1,14 @@
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <input type="text" class="form-control" [formControl]="content" [(ngModel)]="contentEdit" (change)="change()">
+  <ul>
+    <li
+        [class.complete]="todo.complete"
+        *ngFor="let todo of todos; index as i">
+      {{todo.content}} <button type="button" class="btn btn-info" (click)="getDataEditTodo(todo)" >sửa</button>
+                       <button type="button" class="btn btn-danger m-lg-1 mt-1" (click)="deleteTodo(todo.id)" >xóa</button>
+    </li>
+  </ul>
+</div>

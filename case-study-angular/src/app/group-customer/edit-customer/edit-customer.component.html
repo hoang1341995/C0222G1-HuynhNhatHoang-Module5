@@ -1,1 +1,74 @@
-<p>edit-customer works!</p>
+<button type="button" class="btn btn-outline-primary mr-2" (click)="getIdCustomerEdit(idCustomerEdit)" data-toggle="modal" data-target="#edit">Sửa</button>
+<!-- Modal edit -->
+<div class="modal fade bd-example-modal-lg" id="edit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-dark" >
+        <h5 class="modal-title text-white" >Sửa khách hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="text-white" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="customerForm" (ngSubmit)="saveCustomer()">
+        <input type="hidden" formControlName="id" />
+
+        <div class="d-flex">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Mã khách hàng</label>
+              <input type="text" class="form-control"formControlName="code"  placeholder="Nhập mã khách hàng" >
+            </div>
+            <div class="form-group">
+              <label>Tên khách hàng</label>
+              <input type="text" class="form-control" formControlName="name" placeholder="Nhập tên khách hàng" >
+            </div>
+            <div formGroupName="customerType">
+            <div class="form-group">
+              <label>Loại khách hàng</label>
+              <select class="custom-select" formControlName="id">
+                <option *ngFor="let customerTypes of customerType; let i = index" value="{{customerTypes.id}}"
+                        [attr.selected]="i==0 ? true : null">{{customerTypes.name}}</option>
+              </select>
+            </div>
+            </div>
+            <div class="form-group">
+              <label>Ngày Sinh</label>
+              <input placeholder="Selected date" type="date" formControlName="birthday" class="form-control datepicker" >
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Giới tính</label>
+              <select class="custom-select" formControlName="gender" >
+                <option value="1">Nam</option>
+                <option value="0">Nữ</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Số CMND</label>
+              <input type="text" class="form-control" formControlName="idCard"  placeholder="Nhập số CMND" >
+            </div>
+            <div class="form-group">
+              <label>Số Điện thoại</label>
+              <input type="text" class="form-control" formControlName="phone" placeholder="Nhập số Điện thoại" >
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Nhập Email" >
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Địa chỉ</label>
+          <textarea class="form-control" formControlName="address" rows="3" placeholder="Nhập điện chỉ"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-dark btn-block mb-4" >Xác nhận</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal edit -->
