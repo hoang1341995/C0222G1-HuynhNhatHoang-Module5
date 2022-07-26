@@ -1,0 +1,28 @@
+{
+  "productList": [
+    {
+      "id": 1,
+      "name": "aaaaaaa",
+      "price": 11111111,
+      "description": "aaaaaaaaa",
+      "productType": {
+        "idType": 2,
+        "nameType": "IPHONE 2"
+      }
+    }
+  ],
+  "productType": [
+    {
+      "idType": 1,
+      "nameType": "IPHONE 1"
+    },
+    {
+      "idType": 2,
+      "nameType": "IPHONE 2"
+    },
+    {
+      "idType": 3,
+      "nameType": "IPHONE 3"
+    }
+  ]
+}

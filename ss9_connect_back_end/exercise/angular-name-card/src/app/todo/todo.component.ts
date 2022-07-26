@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Todo} from '../todo';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TodoService} from './todo.service';
+import {TeestComponent} from '../teest/teest.component';
 
 // tslint:disable-next-line:variable-name
 let _id = 1;
@@ -24,7 +25,7 @@ export class TodoComponent implements OnInit {
 
   contentEdit: string;
 
-  constructor(private todoService: TodoService) {
+  constructor(private todoService: TodoService, private test: TeestComponent) {
   }
 
   ngOnInit() {
@@ -85,6 +86,7 @@ export class TodoComponent implements OnInit {
     // @ts-ignore
     this.contentEdit = todo.content;
     this.todosimple = todo;
+    this.test.showText('123123');
 
   }
 }

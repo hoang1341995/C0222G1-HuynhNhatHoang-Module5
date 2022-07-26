@@ -1,0 +1,36 @@
+<h1>
+  Chỉnh sửa sản phẩm
+</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Mã sản phẩm:</td>
+      <td><input type="number" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr formGroupName="productType">
+      <td>Catalog</td>
+      <select formControlName="idType">
+        <option value="">Select</option>
+        <option *ngFor="let p of productTypeList" value="{{p.idType}}">{{p.nameType}}</option>
+      </select>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>Edit</button>
+      </td>
+    </tr>
+  </table>
+</form>
