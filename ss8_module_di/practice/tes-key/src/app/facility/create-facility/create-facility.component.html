@@ -1,0 +1,61 @@
+<div class="container">
+  <div class=" bg-light">
+    <div class="h1 center-box"> THÊM MỚI DỊCH VỤ</div>
+    <form [formGroup]="facilityForm" method="post" class="p-3">
+      <div class="form-group">
+        <input class="form-control" type="hidden">
+      </div>
+      <div class="form-group">
+        <label>Nhập Tên dịch vụ</label>
+        <input placeholder="Nhập tiêu đề" class="form-control" formControlName="nameFacility">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="facilityForm.controls.nameFacility.hasError('required') && facilityForm.controls.nameFacility.dirty">
+        <small>Field is invalid or empty</small>
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="facilityForm.controls.nameFacility.hasError('pattern') && facilityForm.controls.nameFacility.dirty">
+        <small>Wrong Format!!</small>
+      </div>
+
+      <div class="form-group">
+        <label>Nhập diện tích sử dụng</label>
+        <input placeholder="Nhập nội dung" class="form-control" formControlName="area">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="facilityForm.controls.area.hasError('required') && facilityForm.controls.area.dirty">
+        <small>Field is invalid or empty</small>
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="facilityForm.controls.area.hasError('pattern') && facilityForm.controls.area.dirty">
+        <small>Wrong Format!!</small>
+      </div>
+      <div class="form-group">
+        <label>Nhập chi phí thuê</label>
+        <input placeholder="Nhập nội dung" class="form-control" formControlName="rentalCost">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="facilityForm.controls.rentalCost.hasError('required') && facilityForm.controls.rentalCost.dirty">
+        <small>Field is invalid or empty</small>
+      </div>
+      <div class="form-group">
+        <label>Nhập số lượng người tối đa</label>
+        <input placeholder="Nhập nội dung" class="form-control" formControlName="numberPeople">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="facilityForm.controls.numberPeople.hasError('required') && facilityForm.controls.numberPeople.dirty">
+        <small>Email is invalid or empty</small>
+      </div>
+      <div class="form-group">
+        <label>Nhập kiểu thuê</label>
+        <input placeholder="Nhập ngày đăng" class="form-control" formControlName="rentalType">
+      </div>
+      <div class="mb-3 text-danger"
+           *ngIf="facilityForm.controls.rentalType.hasError('required') && facilityForm.controls.rentalType.dirty">
+        <small>Email is invalid or empty</small>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+{
+  "customerList": [
+    {
+      "id": 1,
+      "code": "KH-0001",
+      "fullName": "Nguyen Ha Phuong",
+      "birthDay": "1997-10-20",
+      "gender": 1,
+      "idCard": "6636362333",
+      "phone": "0986787878",
+      "email": "cuong@gmail.com",
+      "address": "Quảng Bình",
+      "typeCustomer": {
+        "id": 1,
+        "name": "Platinum"
+      }
+    },
+    {
+      "code": "KH-9991",
+      "fullName": "hoanggugugu",
+      "birthDay": "1999-11-11",
+      "gender": 1,
+      "idCard": "099999",
+      "phone": "999999",
+      "email": "hoang@gmail.com",
+      "address": "dsfsdfsdfsd",
+      "typeCustomer": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 2
+    }
+  ],
+  "typeCustomerList": [
+    {
+      "id": 1,
+      "name": "Platinum"
+    },
+    {
+      "id": 2,
+      "name": "Diamond"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

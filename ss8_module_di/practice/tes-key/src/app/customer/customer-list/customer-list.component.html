@@ -1,0 +1,221 @@
+<table class="table table-striped text-align-center">
+  <thead class="thead-dark">
+  <a routerLink="/createCustomer"
+     class="btn btn-primary bi bi-plus-circle d-flex justify-content-center">Thêm mới</a>
+  <tr>
+    <th style="text-align: center" scope="col">NO.</th>
+    <th style="text-align: center" scope="col">CODE</th>
+    <th style="text-align: center" scope="col">Full name</th>
+    <th style="text-align: center" scope="col">Birth day</th>
+    <th style="text-align: center" scope="col">Gender</th>
+    <th style="text-align: center" scope="col">Id card</th>
+    <th style="text-align: center" scope="col">Phone</th>
+    <th style="text-align: center" scope="col">Email</th>
+    <th style="text-align: center" scope="col">Address</th>
+    <th style="text-align: center" scope="col">Type customer</th>
+    <th style="text-align: center" scope="col">Edit</th>
+    <th style="text-align: center" scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody id="customerList" style="text-align: center">
+  <tr *ngFor="let customer of customers; index as i">
+    <td>{{customer.id}}</td>
+    <td>{{customer.code}}</td>
+    <td>{{customer.fullName}}</td>
+    <td>{{customer.birthDay}}</td>
+    <td>
+      <span *ngIf="customer.gender ==0">Male</span>
+      <span *ngIf="customer.gender ==1">Female</span>
+    </td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phone}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.typeCustomer.name}}</td>
+    <!--    <td>-->
+    <!--      <button type="button" class="btn btn-primary bi bi-plus-circle" data-toggle="modal" data-target="#exampleModal">-->
+
+    <!--      </button>-->
+    <!--    </td>-->
+<!--    <td>-->
+<!--      <a routerLink="/createCustomer"-->
+<!--         class="btn btn-primary bi bi-plus-circle"></a>-->
+<!--    </td>-->
+
+    <!--    <td>-->
+    <!--      <button type="button" class="btn btn-primary bi bi-pencil-square" data-toggle="modal" data-target="#exampleModal1">-->
+
+    <!--      </button>-->
+    <!--    </td>-->
+    <td>
+      <a routerLink="/editCustomer"
+         class="btn btn-primary bi bi-pencil-square"></a>
+
+    </td>
+    <td>
+      <a type="button"  data-toggle="modal" data-target="#exampleModalLong" (click)="getCustomerDelete(customer)" class="btn btn-primary bi bi-trash3 ">
+      </a>
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        code: {{customerDelete.code}}<br>
+        Full Name: {{customerDelete.fullName}}<br>
+        Bạn có muốn xoá khách hàng
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="deleteCustomer(customerDelete.id)" data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog" role="document">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel">Create Customer</h5>-->
+<!--        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--          <span aria-hidden="true">&times;</span>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <form>-->
+<!--        <div class="form-group">-->
+<!--          <label>Code:</label>-->
+<!--          <input type="text" class="form-control">-->
+<!--        </div>-->
+<!--      <div class="form-group">-->
+<!--          <label for="inputNameCus">Full name:</label>-->
+<!--          <input type="text" class="form-control" id="inputNameCus">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="inputBirthCus">Date of birth:</label>-->
+<!--          <input type="date" class="form-control" id="inputBirthCus">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="inputGenderCus">Gender:</label>-->
+<!--          <select id="inputGenderCus" class="form-control w-25">-->
+<!--            <option>Choose</option>-->
+<!--            <option value="1">Male</option>-->
+<!--            <option value="0">Female</option>-->
+<!--            <option value="2">Other</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="inputIdCardCus">ID card:</label>-->
+<!--          <input type="text" class="form-control" id="inputIdCardCus">-->
+
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="inputPhoneCus">Phone:</label>-->
+<!--          <input type="text" class="form-control" id="inputPhoneCus">-->
+
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="exampleInputEmail1">Email address</label>-->
+<!--          <input type="email" class="form-control" id="exampleInputEmail1"-->
+<!--                 aria-describedby="emailHelp">-->
+<!--          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone-->
+<!--            else.</small>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="inputAddressCus">Address:</label>-->
+<!--          <input type="text" class="form-control" id="inputAddressCus">-->
+
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="inputTypeOfCus">Type of customer:</label>-->
+<!--          <select id="inputTypeOfCus" class="form-control w-25">-->
+<!--            <option value="1">Choose</option>-->
+<!--            <option value="1">Platinium</option>-->
+<!--            <option value="2"> God</option>-->
+<!--            <option value="3"> Silver</option>-->
+<!--            <option value="4"> Member</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary">Add New</button>-->
+<!--      </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--  <div class="modal-dialog" role="document">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel1">Edit Customer</h5>-->
+<!--        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--          <span aria-hidden="true">&times;</span>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="inputNameCus">Full name:</label>-->
+<!--        <input type="text" class="form-control" >-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="inputBirthCus">Date of birth:</label>-->
+<!--        <input type="date" class="form-control" >-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="inputGenderCus">Gender:</label>-->
+<!--        <select  class="form-control w-25">-->
+<!--          <option>Choose</option>-->
+<!--          <option value="1">Male</option>-->
+<!--          <option value="0">Female</option>-->
+<!--          <option value="2">Other</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="inputIdCardCus">ID card:</label>-->
+<!--        <input type="text" class="form-control" >-->
+
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="inputPhoneCus">Phone:</label>-->
+<!--        <input type="text" class="form-control" >-->
+
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="exampleInputEmail1">Email address</label>-->
+<!--        <input type="email" class="form-control"-->
+<!--               aria-describedby="emailHelp">-->
+<!--        <small class="form-text text-muted">We'll never share your email with anyone-->
+<!--          else.</small>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="inputAddressCus">Address:</label>-->
+<!--        <input type="text" class="form-control" >-->
+
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="inputTypeOfCus">Type of customer:</label>-->
+<!--        <select  class="form-control w-25">-->
+<!--          <option value="1">Choose</option>-->
+<!--          <option value="1">Platinium</option>-->
+<!--          <option value="2"> God</option>-->
+<!--          <option value="3"> Silver</option>-->
+<!--          <option value="4"> Member</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary">Add New</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
