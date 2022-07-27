@@ -2,69 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97c7e156-d895-4306-8be6-ec0f0f3063fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/case-study/case-study-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/case-study/case-study.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/contract-list/contract-list.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/contract-list/contract-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/contract-list/contract-list.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/contract-list/contract-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/contract-list/icontract.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/create-contract/create-contract.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/create-contract/create-contract.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/create-contract/create-contract.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/contract/create-contract/create-contract.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/create-customer/create-customer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/create-customer/create-customer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/create-customer/create-customer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/customer-list/customer-list.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/customer-list/customer-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/customer-list/customer-list.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/customer-list/customer-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/edit-customer/edit-customer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/edit-customer/edit-customer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/edit-customer/edit-customer.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/edit-customer/edit-customer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/icustomer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/customer/itype-customer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/create-facility/create-facility.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/create-facility/create-facility.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/create-facility/create-facility.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/edit-facility/edit-facility.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/edit-facility/edit-facility.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/edit-facility/edit-facility.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/facility-list/facility-list.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/facility-list/facility-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/facility-list/facility-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/facility/facility-list/ifacility.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/footer/footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/footer/footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/footer/footer.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/footer/footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/furama/furama.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/furama/furama.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/furama/furama.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/furama/furama.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/header/header.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/header/header.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/header/header.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/header/header.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/service.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/app/service.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_module_di/practice/tes-key/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/class.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-create/student-create.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-create/student-create.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-create/student-create.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-delete/student-delete.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-delete/student-delete.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-delete/student-delete.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-edit/student-edit.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-edit/student-edit.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-edit/student-edit.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-list/student-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-list/student-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-list/student-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-search/student-search.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-search/student-search.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-search/student-search.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student-search/student-search.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/app/student.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/css/loading.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/form/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/form/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/form/nav-bar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js-furama/js-contract.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js-furama/js-customer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js-furama/js-employee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js-furama/js-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js-furama/menu-nav-bar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/bootstrap/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/carousel/img1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/carousel/img2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/img-furama/banner01.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/assets/img/service/img9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam-module5/src/database.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +143,9 @@
       <workItem from="1658738558442" duration="2858000" />
       <workItem from="1658802197562" duration="237000" />
       <workItem from="1658825095947" duration="652000" />
+      <workItem from="1658830472022" duration="354000" />
+      <workItem from="1658847089260" duration="3411000" />
+      <workItem from="1658885430142" duration="2833000" />
     </task>
     <servers />
   </component>
