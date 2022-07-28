@@ -1,76 +1,70 @@
 {
-  "student": [
-    {
-      "id": 2,
-      "name": "Huỳnh Hoàng5",
-      "birthday": "1995-04-15",
-      "email": "hoang123123@gmail.com",
-      "phone": "0999222111",
-      "class": {
-        "id": "3",
-        "name": "c0444g1"
-      }
-    },
-    {
-      "id": 4,
-      "name": "hoanghaaahi",
-      "birthday": "1999-11-11",
-      "phone": "099999992",
-      "email": "hjoang@gmail.com",
-      "class": {
-        "id": "2",
-        "name": "c0333g1"
-      }
-    },
-    {
-      "id": 5,
-      "name": "huỳnh phúc",
-      "birthday": "1999-11-20",
-      "phone": "0999999222",
-      "email": "phuc@gmai..com",
-      "class": {
-        "id": "3",
-        "name": "c0444g1"
-      }
-    },
-    {
-      "id": 6,
-      "name": "Ngọc",
-      "birthday": "2022-12-12",
-      "phone": "0999999222",
-      "email": "hoang@gmai.com",
-      "class": {
-        "id": "2",
-        "name": "c0333g1"
-      }
-    }
-  ],
-  "teacher": [
+  "ticket": [
     {
       "id": 1,
-      "name": "Huynh",
-      "birthday": "1996-04-13",
-      "email": "hoang@gmail.com",
-      "phone": "0909999999",
-      "salary": 1000,
-      "class": {
-        "id": 1,
-        "name": "c0222g1"
-      }
-    }
-  ],
-  "class": [
-    {
-      "id": 1,
-      "name": "c0222g1"
+      "price": 1000,
+      "startPoint": "2022-10-10",
+      "endPoint": "Đà NẴng",
+      "startDate": "123123",
+      "startTime": "123123",
+      "car": {
+        "code": 1231,
+        "name": "123123"
+      },
+      "count": 119
     },
     {
       "id": 2,
-      "name": "c0333g1"
+      "price": "1",
+      "startPoint": "1",
+      "endPoint": "1",
+      "startDate": "2022-07-12",
+      "startTime": "1",
+      "car": {
+        "code": 1,
+        "name": "Phương Trang"
+      },
+      "count": 0
     },
     {
       "id": 3,
-      "name": "c0444g1"
+      "price": "100",
+      "startPoint": "Đà Nẵng",
+      "endPoint": "Huế",
+      "startDate": "2022-07-29",
+      "startTime": "12:12",
+      "car": {
+        "code": 1,
+        "name": "Phương Trang"
+      },
+      "count": "3"
+    },
+    {
+      "id": 4,
+      "price": "1000",
+      "startPoint": "Đà Nẵng",
+      "endPoint": "Huế",
+      "startDate": "2022-07-29",
+      "startTime": "12:12",
+      "car": {
+        "code": 1,
+        "name": "Phương Trang"
+      },
+      "count": 2
+    }
+  ],
+  "car": [
+    {
+      "code": 1,
+      "name": "Phương Trang"
+    },
+    {
+      "code": 2,
+      "name": "Tiến Thành"
+    },
+    {
+      "code": 3,
+      "name": "Mai Linh"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "angular-product-management": {
+    "product-finish": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,12 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-product-management",
+            "outputPath": "dist/product-finish",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -41,7 +41,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -63,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-product-management:build"
+            "browserTarget": "product-finish:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-product-management:build:production"
+              "browserTarget": "product-finish:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-product-management:build"
+            "browserTarget": "product-finish:build"
           }
         },
         "test": {
@@ -111,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-product-management:serve"
+            "devServerTarget": "product-finish:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-product-management:serve:production"
+              "devServerTarget": "product-finish:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-product-management"
+  "defaultProject": "product-finish"
 }

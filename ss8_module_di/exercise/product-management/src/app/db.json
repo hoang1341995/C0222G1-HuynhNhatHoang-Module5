@@ -1,0 +1,48 @@
+{
+  "categories": [
+    {
+      "name": "laptop",
+      "id": 1
+    },
+    {
+      "name": "dien thoai",
+      "id": 2
+    },
+    {
+      "name": "may tinh bang",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "name": "iphone",
+      "price": "2626262",
+      "description": "con hang",
+      "category": {
+        "name": "dien thoai",
+        "id": 2
+      },
+      "id": 1
+    },
+    {
+      "name": "dell 3500",
+      "price": 5454545,
+      "description": "het hang",
+      "category": {
+        "name": "laptop",
+        "id": 1
+      },
+      "id": 2
+    },
+    {
+      "name": "samsung",
+      "price": 32323,
+      "description": "con hang",
+      "category": {
+        "name": "dien thoai",
+        "id": 2
+      },
+      "id": 3
+    }
+  ]
+}

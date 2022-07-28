@@ -1,0 +1,73 @@
+<!-- Modal HTML -->
+<div id="modalAddNew" class="modal fade">
+  <div class="modal-dialog modal-lg contact-modal">
+    <div class="modal-content">
+      <form [formGroup]="tickerForm">
+        <div class="modal-header">
+          <h4 class="modal-title">Thêm vé xe</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="startPoint" placeholder="Điểm di">
+                <p class="text-danger" *ngIf="tickerForm.controls.startPoint.hasError('required') && tickerForm.controls.startPoint.dirty">
+                  Trường này không được trống
+                </p>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="startTime" placeholder="Giờ khởi hành">
+                <p class="text-danger" *ngIf="tickerForm.controls.startTime.hasError('required') && tickerForm.controls.startTime.dirty">
+                  Trường này không được trống
+                </p>
+              </div>
+              <div class="form-group" formGroupName="car">
+                <select class="custom-select" formControlName="code">
+                  <option *ngFor="let cars of carList" value="{{cars.code}}">{{cars.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="endPoint" placeholder="Điểm đến">
+                <p class="text-danger" *ngIf="tickerForm.controls.endPoint.hasError('required') && tickerForm.controls.endPoint.dirty">
+                  Trường này không được trống
+                </p>
+              </div>
+              <div class="form-group">
+                <input type="date" class="form-control" formControlName="startDate" placeholder="Ngày khởi hành">
+                <p class="text-danger" *ngIf="tickerForm.controls.startDate.hasError('required') && tickerForm.controls.startDate.dirty">
+                  Trường này không được trống
+                </p>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="count" placeholder="Số lượng">
+                <p class="text-danger" *ngIf="tickerForm.controls.count.hasError('required') && tickerForm.controls.count.dirty">
+                  Chưa nhập số lượng
+                </p>
+                <p class="text-danger" *ngIf="tickerForm.controls.count.hasError('numbererror') && tickerForm.controls.count.dirty">
+                  Số lượng phải là số dương
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="price" placeholder="Giá vé">
+                <p class="text-danger" *ngIf="tickerForm.controls.price.hasError('required') && tickerForm.controls.price.dirty">
+                  Chưa nhập giá vé
+                </p>
+                <p class="text-danger" *ngIf="tickerForm.controls.price.hasError('numbererror') && tickerForm.controls.price.dirty">
+                  Giá phải là số dương
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary  btn-block" data-dismiss="modal" [disabled]="tickerForm.invalid"  (click)="saveTicket()">Thêm mới</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

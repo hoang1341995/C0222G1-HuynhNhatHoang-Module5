@@ -9,16 +9,30 @@ import {CategoryService} from '../../service/category.service';
 })
 export class CategoryListComponent implements OnInit {
   categories: Category[] = [];
+  idToDelete: number;
+  nameToDelete: string;
 
   constructor(private categoryService: CategoryService) {
   }
 
-  ngOnInit() {
-    this.getAll();
+  ngOnInit(): void {
+    this.getCategory();
   }
 
-  getAll() {
-    this.categories = this.categoryService.getAll();
+  getCategory() {
+    this.categoryService.getCategory().subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
+  showMess(id: any, name: any) {
+    this.idToDelete = id;
+    this.nameToDelete = name;
+  }
+
+  deleteCategory() {
+    this.categoryService.deleteCategory(this.idToDelete).subscribe((data) => {
+      this.getCategory();
+    });
+  }
 }

@@ -1,0 +1,69 @@
+<div class="container-fluid d-flex">
+  <div class="left col-12">
+    <div class="container-xl">
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-8"><h2><b>Danh sách vé xe</b></h2>
+                <button href="#modalAddNew" data-toggle="modal" type="button" class="btn btn-light bi bi-pencil-square"></button>
+              </div>
+              <div class="col-sm-4">
+              <app-ticket-search></app-ticket-search>
+              </div>
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+              <th>Điểm di</th>
+              <th>Điểm đến</th>
+              <th>Giá vé</th>
+              <th>Ngày khởi hành</th>
+              <th>Giờ khởi hành</th>
+              <th>Nhà xe</th>
+              <th>Số lượng</th>
+              <th>Tùy chọn</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tickets of ticketList | paginate: {itemsPerPage: 5, currentPage: page, totalItems: totalLength }; index as i">
+              <td>{{tickets.startPoint}}</td>
+              <td>{{tickets.endPoint}}</td>
+              <td>{{tickets.price}}</td>
+              <td>{{tickets.startDate}}</td>
+              <td>{{tickets.startTime}}</td>
+              <td>{{tickets.car.name}}</td>
+              <td>{{tickets.count}}</td>
+              <td>
+                <button type="submit" class="btn btn-outline-dark btn-block" href="#modalOrder" data-toggle="modal" (click)="sendDataForOrder(tickets)">Đặt vé</button>
+<!--                <a href="#modalEdit" data-toggle="modal" class="edit" title="Edit" (click)=""><i class="bi bi-pencil"></i></a>-->
+<!--                <a href="#modalDelete" data-toggle="modal" class="delete" title="Delete" (click)=""><i class="material-icons">&#xE872;</i></a>-->
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+          <!--          phân trang-->
+          <!--          <div class="clearfix">-->
+          <!--            <ul class="pagination">-->
+          <!--              <pagination-controls (pageChange)="page = $event"></pagination-controls>-->
+          <!--              <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>-->
+          <!--              <li class="page-item"><a href="#" class="page-link">1</a></li>-->
+          <!--              <li class="page-item"><a href="#" class="page-link">2</a></li>-->
+          <!--              <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
+          <!--              <li class="page-item"><a href="#" class="page-link">4</a></li>-->
+          <!--              <li class="page-item"><a href="#" class="page-link">5</a></li>-->
+          <!--              <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>-->
+          <!--            </ul>-->
+          <!--          </div>-->
+          <!--          phân trang-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-ticket-create></app-ticket-create>
+<app-ticket-order></app-ticket-order>

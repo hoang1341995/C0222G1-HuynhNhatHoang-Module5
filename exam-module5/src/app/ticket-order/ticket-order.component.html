@@ -1,0 +1,19 @@
+
+<!-- Modal HTML -->
+<div id="modalOrder" class="modal fade">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Xác nhận đặt vé</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc muốn đặt vé xe từ <b>{{ticket.startPoint}}</b> đến <b>{{ticket.endPoint}}</b> vào lúc
+          <b>{{ticket.startTime}}</b> <b>{{ticket.startDate}}</b> không ?</p>      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-danger" data-dismiss="modal">Không</a>
+        <a href="#" class="btn btn-primary" data-dismiss="modal" (click)="confirmOrder()">Có</a>
+      </div>
+    </div>
+  </div>
+</div>

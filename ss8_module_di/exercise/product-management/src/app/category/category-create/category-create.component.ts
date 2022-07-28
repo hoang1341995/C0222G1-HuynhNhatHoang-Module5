@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
 import {CategoryService} from '../../service/category.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-category-create',
@@ -9,20 +10,21 @@ import {CategoryService} from '../../service/category.service';
 })
 export class CategoryCreateComponent implements OnInit {
   categoryForm: FormGroup = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
+    name: new FormControl('')
   });
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: CategoryService,
+              private router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   submit() {
     const category = this.categoryForm.value;
-    this.categoryService.saveCategory(category);
-    this.categoryForm.reset();
+    this.categoryService.saveCategory(category).subscribe(() => {
+      this.categoryForm.reset();
+      this.router.navigateByUrl('/category/list');
+    }, e => console.log(e));
   }
-
 }

@@ -1,0 +1,13 @@
+<div class="search-box" [formGroup]="tickerSearchForm" >
+  <div class="d-flex">
+    <i class="material-icons">&#xE8B6;</i>
+    <input type="text" formControlName="startPointSearch"  (change)="search()" class="form-control mr-1 mt-1" placeholder="Điểm đi">
+    <input type="text" formControlName="endPointSearch" (change)="search()" class="form-control mr-1 mt-1" placeholder="Điểm đến">
+  </div>
+  <div class="d-flex">
+    <i class="material-icons">&#xE8B6;</i>
+    <input type="date"  formControlName="startDate" (change)="search()" class="form-control mr-1 mt-2" placeholder="Ngày khởi hành từ">
+    <input type="date"  formControlName="endDate" (change)="search()" class="form-control mr-1 mt-2" placeholder="Đến">
+  </div>
+</div>
+
