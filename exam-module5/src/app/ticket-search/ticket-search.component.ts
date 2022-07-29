@@ -22,10 +22,6 @@ export class TicketSearchComponent implements OnInit {
   }
 
   search() {
-    console.log(this.startPoint);
-    console.log(this.endPoint);
-    console.log(this.startDate);
-    console.log(this.endDate);
     this.ticketService.searchTicket(this.startPoint, this.endPoint, this.startDate, this.endDate).subscribe(value => {
       this.ticketService.dataSearchToList(value);
     });

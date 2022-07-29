@@ -45,7 +45,13 @@ public class TicketService implements ITicketService {
     public List<Ticket> search(@RequestParam(defaultValue = "") String startPoint,
                                @RequestParam(defaultValue = "") String endPoint,
                                @RequestParam(defaultValue = "") String startDate,
-                               @RequestParam(defaultValue = "2999-12-31") String endDate) {
-        return iTicketRepository.search(startPoint, endPoint, startDate, endDate);
+                               @RequestParam(defaultValue = "") String endDate) {
+        if (startDate.equals("")){
+            startDate = "1900-01-01";
+        }
+        if (endDate.equals("")){
+            endDate = "3000-01-01";
+        }
+        return iTicketRepository.search("%"+startPoint+"%","%"+endPoint+"%",startDate,endDate);
     }
 }

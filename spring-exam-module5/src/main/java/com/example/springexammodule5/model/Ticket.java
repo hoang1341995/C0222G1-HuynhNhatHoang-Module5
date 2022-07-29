@@ -18,7 +18,7 @@ public class Ticket {
     @Column(name = "ticket_endPoint")
     private String endPoint;
 
-    @Column(name = "ticket_startDate")
+    @Column(name = "ticket_startDate", columnDefinition = "date")
     private String startDate;
 
     @Column(name = "ticket_startTime")
