@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {TicketService} from '../ticket.service';
-import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-ticket-search',
@@ -23,7 +22,7 @@ export class TicketSearchComponent implements OnInit {
 
   search() {
     this.ticketService.searchTicket(this.startPoint, this.endPoint, this.startDate, this.endDate).subscribe(value => {
-      this.ticketService.dataSearchToList(value);
+      this.ticketService.sendData('search', value);
     });
   }
 

@@ -57,7 +57,7 @@ table.table th i {
   cursor: pointer;
 }
 table.table td:last-child {
-  width: 130px;
+  width: 230px;
 }
 table.table td a {
   color: #a0a5b1;

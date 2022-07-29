@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Iticket} from './iticket';
@@ -9,22 +9,23 @@ import {Icar} from './icar';
 })
 export class TicketService {
 
-  // @ts-ignore
-  data = new BehaviorSubject<Iticket>();
-  obserData = this.data.asObservable();
 
   // @ts-ignore
-  dataChannelLoadList = new BehaviorSubject<string>();
-  channelLoadList = this.dataChannelLoadList.asObservable();
+  data = new BehaviorSubject<Map<string, any>>();
+  checkData = this.data.asObservable();
 
-  // @ts-ignore
-  dataSearchForList = new BehaviorSubject<Iticket[]>();
-  channelSearchForList = this.dataSearchForList.asObservable();
 
   URL_API = 'http://localhost:8080/api/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
+
+  sendData(key: string, value: any) {
+    const dataMap: Map<string, any> = new Map<string, any>();
+    dataMap.set(key, value);
+    this.data.next(dataMap);
+  }
 
   getListTicket(): Observable<Iticket[]> {
     return this.httpClient.get<Iticket[]>(this.URL_API + 'findAllTicket');
@@ -39,18 +40,6 @@ export class TicketService {
     return this.httpClient.post<Iticket>(this.URL_API + 'createTicket', itickets);
   }
 
-  loadListTicket(message: string) {
-    this.dataChannelLoadList.next(message);
-  }
-
-  dataFormListToOrder(tickets: Iticket) {
-    this.data.next(tickets);
-  }
-
-  dataSearchToList(tickets: Iticket[]) {
-    this.dataSearchForList.next(tickets);
-  }
-
   // @ts-ignore
   oderCar(ticket: Iticket): Observable<Iticket> {
     return this.httpClient.put<Iticket>(this.URL_API + 'orderTicket', ticket);
@@ -61,4 +50,8 @@ export class TicketService {
     return this.httpClient.get<Iticket[]>(this.URL_API + `search?startPoint=${startPoint}&endPoint=${endPoint}&startDate=${startDate}&endDate=${endDate}`);
   }
 
+  // @ts-ignore
+  deleteTicket(ticket: Iticket): Observable<Iticket> {
+    return this.httpClient.delete<Iticket>(this.URL_API + 'deleteTicket/' + ticket.id);
+  }
 }

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Iticket} from '../iticket';
 import {TicketService} from '../ticket.service';
 import {ToastrService} from 'ngx-toastr';
+import {any} from 'codelyzer/util/function';
+import {TicketDeleteComponent} from '../ticket-delete/ticket-delete.component';
 
 @Component({
   selector: 'app-ticket-list',
@@ -13,14 +15,40 @@ export class TicketListComponent implements OnInit {
   totalLength: any;
   page = 1;
   ticketList: Iticket[] = [];
+  data: Map<string, any> = new Map<string, any>();
+
 
   constructor(private ticketService: TicketService, private toartrs: ToastrService) {
   }
 
   ngOnInit(): void {
-    this.getListFromSearch();
+    this.checkData();
     this.getListTicket();
-    this.reloadList();
+  }
+
+  checkData() {
+    this.ticketService.checkData.subscribe(value => {
+      if (value !== undefined) {
+        this.data = value;
+        if (this.data.has('list')) {
+          this.toartrs.success(this.data.get('list'), 'THÔNG BÁO');
+          this.getListTicket();
+        }
+
+        if (this.data.has('search')) {
+          if (this.data.get('search').length == 0) {
+            this.toartrs.error('Không tìm thấy', 'THÔNG BÁO');
+            this.getListTicket();
+          } else {
+            this.ticketList = this.data.get('search');
+          }
+        }
+      }
+    });
+  }
+
+  sendData(key: string, value: any) {
+    this.ticketService.sendData(key , value);
   }
 
   getListTicket() {
@@ -30,29 +58,4 @@ export class TicketListComponent implements OnInit {
     });
   }
 
-  reloadList() {
-    this.ticketService.dataChannelLoadList.subscribe(value => {
-      if (value !== undefined) {
-        this.toartrs.success(value, 'THÔNG BÁO');
-        this.getListTicket();
-      }
-    });
-  }
-
-  sendDataForOrder(tickets: Iticket) {
-    this.ticketService.dataFormListToOrder(tickets);
-  }
-
-  getListFromSearch() {
-    this.ticketService.dataSearchForList.subscribe(value => {
-      if (value !== undefined) {
-        if (value.length == 0) {
-          this.toartrs.error('Không tìm thấy');
-          this.getListTicket();
-        } else {
-          this.ticketList = value;
-        }
-      }
-    });
-  }
 }

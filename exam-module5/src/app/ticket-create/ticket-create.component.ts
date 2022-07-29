@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TicketService} from '../ticket.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Icar} from '../icar';
@@ -13,7 +13,7 @@ export class TicketCreateComponent implements OnInit {
 
   carList: Icar[] = [];
   tickerForm: FormGroup;
-
+  data: Map<string, any> = new Map<string, any>();
   ticket: Iticket = {
     id: 0,
     price: 0,
@@ -28,7 +28,7 @@ export class TicketCreateComponent implements OnInit {
     count: 0
   };
 
-  constructor(private tickerService: TicketService) {
+  constructor(private ticketService: TicketService) {
   }
 
   ngOnInit(): void {
@@ -49,19 +49,9 @@ export class TicketCreateComponent implements OnInit {
   }
 
   getListCar() {
-    this.tickerService.getListCar().subscribe(value => {
+    this.ticketService.getListCar().subscribe(value => {
       this.carList = value;
     });
-  }
-
-  checkDate(abstractControl: AbstractControl): any {
-    const date = new Date(abstractControl.value);
-    const now = new Date();
-    if (date > now) {
-      return null;
-    } else {
-      return {date: true};
-    }
   }
 
   saveTicket() {
@@ -72,14 +62,23 @@ export class TicketCreateComponent implements OnInit {
         break;
       }
     }
-    this.tickerService.createTicket(this.ticket).subscribe(value => {
-      this.tickerService.loadListTicket('Thêm mới thành công');
+    this.ticketService.createTicket(this.ticket).subscribe(value => {
+      this.ticketService.sendData('list', 'Thêm mới thành công');
     });
-
   }
 
   checkNumber(abstractControl: AbstractControl): any {
     return abstractControl.value > 0 ? null : {numbererror: true};
+  }
+
+  checkDate(abstractControl: AbstractControl): any {
+    const date = new Date(abstractControl.value);
+    const now = new Date();
+    if (date > now) {
+      return null;
+    } else {
+      return {date: true};
+    }
   }
 
 }

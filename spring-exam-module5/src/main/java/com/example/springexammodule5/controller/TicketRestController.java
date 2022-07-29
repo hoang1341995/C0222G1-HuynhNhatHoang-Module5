@@ -60,5 +60,12 @@ public class TicketRestController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
+    @DeleteMapping(value = "/deleteTicket/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id){
+        System.out.println(id);
+        iTicketService.remove(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 
 }

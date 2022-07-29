@@ -23,30 +23,38 @@ export class TicketOrderComponent implements OnInit {
     },
     count: 0
   };
+  data: Map<string, any> = new Map<string, any>();
 
   constructor(private ticketService: TicketService, private toartrs: ToastrService) {
   }
 
   ngOnInit(): void {
-    this.getDataFromList();
+    this.checkData();
   }
 
-
-  getDataFromList() {
-    this.ticketService.obserData.subscribe(data => {
-      if (data !== undefined) {
-        this.ticket = data;
+  checkData() {
+    this.ticketService.checkData.subscribe(value => {
+      if (value !== undefined) {
+        this.data = value;
+        if (this.data.has('order')) {
+          this.ticket = this.data.get('order');
+        }
       }
     });
   }
 
+  sendData(key: string, value: any) {
+    this.ticketService.sendData(key, value);
+  }
+
   confirmOrder() {
+    console.log(this.ticket);
     if (this.ticket.count < 1) {
       this.toartrs.error('Đã hết vé', 'THÔNG BÁO');
     } else {
       this.ticket.count = this.ticket.count - 1;
       this.ticketService.oderCar(this.ticket).subscribe(value => {
-        this.ticketService.loadListTicket('Đặt vé Thành công');
+        this.sendData('list', 'Đặt vé thành công');
       });
     }
 
