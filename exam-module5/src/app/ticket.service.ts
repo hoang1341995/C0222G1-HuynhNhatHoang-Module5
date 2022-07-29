@@ -3,7 +3,6 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Iticket} from './iticket';
 import {Icar} from './icar';
-import {Student} from './student';
 
 @Injectable({
   providedIn: 'root'
@@ -18,22 +17,26 @@ export class TicketService {
   dataChannelLoadList = new BehaviorSubject<string>();
   channelLoadList = this.dataChannelLoadList.asObservable();
 
-  URL_API = 'http://localhost:3000/';
+  // @ts-ignore
+  dataSearchForList = new BehaviorSubject<Iticket[]>();
+  channelSearchForList = this.dataSearchForList.asObservable();
+
+  URL_API = 'http://localhost:8080/api/';
 
   constructor(private httpClient: HttpClient) { }
 
 
   getListTicket(): Observable<Iticket[]> {
-    return this.httpClient.get<Iticket[]>(this.URL_API + 'ticket');
+    return this.httpClient.get<Iticket[]>(this.URL_API + 'findAllTicket');
   }
 
   // @ts-ignore
   getListCar(): Observable<Icar[]> {
-    return this.httpClient.get<Icar[]>(this.URL_API + 'car');
+    return this.httpClient.get<Icar[]>(this.URL_API + 'findAllCar');
   }
 
   createTicket(itickets: Iticket): Observable<Iticket> {
-    return this.httpClient.post<Iticket>(this.URL_API + 'ticket', itickets);
+    return this.httpClient.post<Iticket>(this.URL_API + 'createTicket', itickets);
   }
 
   loadListTicket(message: string) {
@@ -44,13 +47,18 @@ export class TicketService {
     this.data.next(tickets);
   }
 
-  // @ts-ignore
-  oderCar(ticket: Iticket): Observable<Iticket> {
-    return this.httpClient.patch<Iticket>(this.URL_API + 'ticket/' + ticket.id, ticket);
+  dataSearchToList(tickets: Iticket[]) {
+    this.dataSearchForList.next(tickets);
   }
 
-  searchTicket(key: string) {
-    return this.httpClient.get<Student[]>(this.URL_API + 'student?name_like=' + key);
+  // @ts-ignore
+  oderCar(ticket: Iticket): Observable<Iticket> {
+    return this.httpClient.put<Iticket>(this.URL_API + 'orderTicket', ticket);
+  }
+
+  searchTicket(startPoint: string, endPoint: string, startDate: string, endDate: string): Observable<Iticket[]> {
+    // tslint:disable-next-line:max-line-length
+    return this.httpClient.get<Iticket[]>(this.URL_API + `search?startPoint=${startPoint}&endPoint=${endPoint}&startDate=${startDate}&endDate=${endDate}`);
   }
 
 }

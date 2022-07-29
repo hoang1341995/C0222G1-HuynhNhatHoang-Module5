@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {TicketService} from '../ticket.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Icar} from '../icar';
-import {Student} from '../student';
 import {Iticket} from '../iticket';
 
 @Component({
@@ -39,7 +38,7 @@ export class TicketCreateComponent implements OnInit {
       price: new FormControl('', [Validators.required, this.checkNumber]),
       startPoint: new FormControl('', [Validators.required]),
       endPoint: new FormControl('', [Validators.required]),
-      startDate: new FormControl('', [Validators.required]),
+      startDate: new FormControl('', [Validators.required, this.checkDate]),
       startTime: new FormControl('', [Validators.required]),
       car: new FormGroup({
         code: new FormControl(1),
@@ -53,6 +52,16 @@ export class TicketCreateComponent implements OnInit {
     this.tickerService.getListCar().subscribe(value => {
       this.carList = value;
     });
+  }
+
+  checkDate(abstractControl: AbstractControl): any {
+    const date = new Date(abstractControl.value);
+    const now = new Date();
+    if (date > now) {
+      return null;
+    } else {
+      return {date: true};
+    }
   }
 
   saveTicket() {

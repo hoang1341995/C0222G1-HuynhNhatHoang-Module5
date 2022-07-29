@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Student} from '../student';
+import {Component, OnInit} from '@angular/core';
 import {Iticket} from '../iticket';
 import {TicketService} from '../ticket.service';
 import {ToastrService} from 'ngx-toastr';
@@ -14,9 +13,12 @@ export class TicketListComponent implements OnInit {
   totalLength: any;
   page = 1;
   ticketList: Iticket[] = [];
-  constructor(private ticketService: TicketService, private toartrs: ToastrService) { }
+
+  constructor(private ticketService: TicketService, private toartrs: ToastrService) {
+  }
 
   ngOnInit(): void {
+    this.getListFromSearch();
     this.getListTicket();
     this.reloadList();
   }
@@ -39,5 +41,18 @@ export class TicketListComponent implements OnInit {
 
   sendDataForOrder(tickets: Iticket) {
     this.ticketService.dataFormListToOrder(tickets);
+  }
+
+  getListFromSearch() {
+    this.ticketService.dataSearchForList.subscribe(value => {
+      if (value !== undefined) {
+        if (value.length == 0) {
+          this.toartrs.error('Không tìm thấy');
+          this.getListTicket();
+        } else {
+          this.ticketList = value;
+        }
+      }
+    });
   }
 }

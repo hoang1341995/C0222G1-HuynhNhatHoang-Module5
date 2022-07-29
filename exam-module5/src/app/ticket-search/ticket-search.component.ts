@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Student} from '../student';
+import {Component, OnInit} from '@angular/core';
 import {TicketService} from '../ticket.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-ticket-search',
@@ -10,29 +9,26 @@ import {TicketService} from '../ticket.service';
 })
 export class TicketSearchComponent implements OnInit {
 
-  key = new FormControl();
-  studentList: Student[] = [];
-  tickerSearchForm = FormGroup;
+  startPoint = '';
+  endPoint = '';
+  startDate = '';
+  endDate = '';
 
   constructor(private ticketService: TicketService) {
-    // @ts-ignore
-    this.tickerSearchForm = new FormGroup({
-      startPointSearch: new FormControl(),
-      endPointSearch: new FormControl(),
-      startDate: new FormControl(),
-      endDate: new FormControl()
-    });
+
   }
 
   ngOnInit(): void {
   }
 
   search() {
-    // this.ticketService.searchByName(this.key.value).subscribe(value => {
-    //   this.studentList = value;
-    //   this.ticketService.StudentListSearch(this.studentList);
-    //   this.studentList = [];
-    // });
+    console.log(this.startPoint);
+    console.log(this.endPoint);
+    console.log(this.startDate);
+    console.log(this.endDate);
+    this.ticketService.searchTicket(this.startPoint, this.endPoint, this.startDate, this.endDate).subscribe(value => {
+      this.ticketService.dataSearchToList(value);
+    });
   }
 
 }

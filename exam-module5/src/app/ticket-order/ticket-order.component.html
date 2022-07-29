@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <p>Bạn có chắc muốn đặt vé xe từ <b>{{ticket.startPoint}}</b> đến <b>{{ticket.endPoint}}</b> vào lúc
-          <b>{{ticket.startTime}}</b> <b>{{ticket.startDate}}</b> không ?</p>      </div>
+          <b>{{ticket.startTime}} </b><b>{{ticket.startDate|date: "dd/MM/yyyy"}}</b> không ?</p>      </div>
       <div class="modal-footer">
         <a href="#" class="btn btn-danger" data-dismiss="modal">Không</a>
         <a href="#" class="btn btn-primary" data-dismiss="modal" (click)="confirmOrder()">Có</a>
