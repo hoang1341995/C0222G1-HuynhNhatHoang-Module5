@@ -1,0 +1,49 @@
+<div class="body-login">
+  <div class="d-flex">
+
+  <div class="col-6">
+    <img src="assets/images/banner-login.png" alt="banner" class="rounded float-right" height="510">
+  </div>
+  <div class="col-6">
+    <div class="login-form">
+
+      <div class="logo"><img src="assets/images/logo.png" alt="logo"></div>
+
+      <h6 class="text-center mt-4">Đăng nhập</h6>
+      <form [formGroup]="loginForm" >
+        <div class="form-floating text-box">
+          <input type="text" class="form-control btn-outline-secondary" id="inputUsername" formControlName="username"
+                 placeholder="Tài khoản hoặc Email">
+          <label for="inputUsername" style="color: white">Tài khoản hoặc Email</label>
+        </div>
+
+        <div class="form-floating text-box">
+          <input type="password" class="form-control btn-outline-secondary" id="inputPassword" formControlName="password"
+                 placeholder="Mật khẩu">
+          <label for="inputPassword" style="color: white">Mật khẩu</label>
+        </div>
+
+        <div class="options">
+          <label class="remember-me">
+                    <span class="checkbox">
+                        <input type="checkbox">
+                        <span class="checked"></span>
+                    </span>
+            Nhớ mật khẩu
+          </label>
+          <!--                <a href="">Lấy lại mật khẩu</a>-->
+        </div>
+        <button type="button" class="btn btn-outline-secondary login-btn text-light" (click)="login()">Đăng nhập</button>
+
+
+      </form>
+
+      <div class="dont-have-account">
+        Bạn chưa có tài khoản ?
+        <a href="">Đăng ký</a>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</div>
