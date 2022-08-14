@@ -3,6 +3,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Iticket} from './iticket';
 import {Icar} from './icar';
+import {City} from './city';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class TicketService {
     const dataMap: Map<string, any> = new Map<string, any>();
     dataMap.set(key, value);
     this.data.next(dataMap);
+  }
+
+  getVietNam(): Observable<City[]> {
+    return this.httpClient.get<City[]>('https://provinces.open-api.vn/api/?depth=3');
   }
 
   getListTicket(): Observable<Iticket[]> {

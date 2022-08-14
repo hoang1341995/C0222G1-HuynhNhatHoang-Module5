@@ -16,6 +16,7 @@ import { TicketCreateComponent } from './ticket-create/ticket-create.component';
 import { TicketOrderComponent } from './ticket-order/ticket-order.component';
 import { TicketSearchComponent } from './ticket-search/ticket-search.component';
 import { TicketDeleteComponent } from './ticket-delete/ticket-delete.component';
+import { VietnamComponent } from './vietnam/vietnam.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { TicketDeleteComponent } from './ticket-delete/ticket-delete.component';
     TicketCreateComponent,
     TicketOrderComponent,
     TicketSearchComponent,
-    TicketDeleteComponent
+    TicketDeleteComponent,
+    VietnamComponent
   ],
   imports: [
     BrowserModule,

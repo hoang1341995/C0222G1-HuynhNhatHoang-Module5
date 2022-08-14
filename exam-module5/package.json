@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "errrr": "ng g i wards",
     "json-server": "json-server --watch src/database.json"
   },
   "private": true,

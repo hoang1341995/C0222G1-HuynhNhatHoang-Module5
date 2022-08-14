@@ -1,0 +1,10 @@
+<select [(ngModel)]="city" (change)="getDistricts()">
+  <option *ngFor="let citys of cityList" [value]="citys.name" >{{citys.name}}</option>
+</select>
+<select [(ngModel)]="districts" (change)="getWard()">
+  <option *ngFor="let districts of districtsList" [value]="districts.name" >{{districts.name}}</option>
+</select>
+<select>
+  <option *ngFor="let wards of wardsList" [value]="wards.name" >{{wards.name}}</option>
+</select>
+
